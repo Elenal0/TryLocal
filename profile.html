@@ -14,43 +14,45 @@
 </head>
 <body style="background:#F1F5F9;">
 
-  <!-- Top Institutional Bar -->
+  <!-- Top Announcement Bar -->
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
-        <span class="top-bar-badge">Academic Practical Document</span>
-        <span>Sardar Patel Institute of Technology (SPIT), Mumbai • MCA Course</span>
-        <span style="opacity:0.4;">|</span>
-        <span>Experiment 8: Business Plan &amp; Experiment 5: IPR</span>
+        <span class="top-bar-badge">Live in Mumbai</span>
+        <span>⚡ 30-Min In-Home Fashion Trials in Andheri West, Bandra &amp; Juhu</span>
+        <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
-        <a href="index.html">← Back to Main Home</a>
+        <a href="mailto:nupur.thakur25@spit.ac.in">
+          <span>✉ nupur.thakur25@spit.ac.in</span>
+        </a>
+        <span>📍 Andheri West, Mumbai</span>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header (Fixed & Non-wrapping) -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-link">
-        <img src="assets/logo.svg" alt="TryLocal Logo" height="46">
+        <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
       </a>
 
       <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home &amp; About</a></li>
-          <li><a href="profile.html" class="nav-link active">Startup Profile</a></li>
-          <li><a href="brochure.html" class="nav-link">Brochure</a></li>
-          <li><a href="video.html" class="nav-link">Pitch Video</a></li>
-          <li><a href="index.html#workflow" class="nav-link">Operations</a></li>
-          <li><a href="index.html#team" class="nav-link">Founding Team</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <ul class="nav-menu" id="primary-nav">
+          <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
+          <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
+          <li><a href="index.html#simulator" class="nav-link" id="nav-demo">Try-at-Home Demo</a></li>
+          <li><a href="profile.html" class="nav-link active" id="nav-profile">Story &amp; Profile</a></li>
+          <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-cta-group">
         <button class="btn btn-sm btn-primary action-download-profile" id="btn-print-profile">
-          <span>🖨️ Download / Print Profile (PDF)</span>
+          <span>🖨️ Print Profile (PDF)</span>
         </button>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <span></span>
@@ -81,8 +83,18 @@
         <h1 class="profile-main-title">TryLocal</h1>
         <div class="profile-tagline-quote">"Your Favourite Fits, Tried at Home."</div>
         <p style="color:#CBD5E1; font-size:1.05rem; max-width:720px; line-height:1.6; margin-bottom:1.5rem;">
-          Hyperlocal Fashion E-commerce &amp; Home-Trial Logistics System connecting neighborhood boutiques in Mumbai with consumers aged 18–35 for zero-friction home fitting trials.
+          Hyperlocal Fashion E-commerce &amp; In-Home Trial Logistics Platform connecting neighborhood boutiques in Mumbai with shoppers aged 18–35 for zero-friction home fitting trials.
         </p>
+
+        <!-- Visual Image Preview in Header -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.75rem;">
+          <div style="border-radius:var(--radius-md); overflow:hidden; height:180px; border:1px solid rgba(255,255,255,0.15);">
+            <img src="assets/trylocal_fitting_mirror.jpg" alt="In-Home Mirror Fitting" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="border-radius:var(--radius-md); overflow:hidden; height:180px; border:1px solid rgba(255,255,255,0.15);">
+            <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep Delivery Handover" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+        </div>
 
         <!-- Meta Grid -->
         <div class="profile-header-meta-grid">
@@ -91,28 +103,28 @@
             <span>Grace Pinnacle, 1105, Andheri West, Mumbai, MH 400058</span>
           </div>
           <div class="profile-meta-block">
-            <strong>Institution &amp; Subject</strong>
-            <span>SPIT Mumbai • EIPR (Exp 8 &amp; Exp 5)</span>
+            <strong>Institution &amp; Program</strong>
+            <span>SPIT Mumbai • MCA Postgraduate Venture</span>
           </div>
           <div class="profile-meta-block">
-            <strong>Venture Stage</strong>
-            <span style="color:#A7F3D0;">Proposed Concept (Academic Pre-Seed)</span>
+            <strong>Primary Contact</strong>
+            <span style="color:#A7F3D0;">Nupur Thakur (nupur.thakur25@spit.ac.in)</span>
           </div>
         </div>
       </div>
 
       <!-- Quick Action Asset Links Bar -->
       <div style="background:#0F1F38; padding:1rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; border-bottom:1px solid rgba(255,255,255,0.1);">
-        <span style="color:#94A3B8; font-size:0.85rem; font-weight:600;">DIRECT ARTIFACT &amp; MEDIA LINKS:</span>
+        <span style="color:#94A3B8; font-size:0.85rem; font-weight:600;">EXPLORE TRYLOCAL PLATFORM:</span>
         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
           <a href="index.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>🌐 Website Home</span>
+            <span>🌐 Main Home</span>
           </a>
           <a href="brochure.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>📄 2-Page Brochure</span>
+            <span>📄 Visual Brochure</span>
           </a>
-          <a href="video.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>🎬 Pitch Video Demo</span>
+          <a href="contact.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
+            <span>✉ Contact Nupur</span>
           </a>
         </div>
       </div>

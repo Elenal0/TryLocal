@@ -5,12 +5,37 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
+  initPageTransitions();
   initWorkflowStepper();
   initTrialSimulator();
   initBrochureViewer();
   initVideoController();
   initPdfPrintActions();
 });
+
+/* ==========================================================================
+   Smooth Page Transitions
+   ========================================================================== */
+function initPageTransitions() {
+  window.addEventListener('pageshow', () => {
+    document.body.style.opacity = '1';
+    document.body.style.transform = 'translateY(0)';
+  });
+
+  document.querySelectorAll('a[href$=".html"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const target = anchor.getAttribute('href');
+      if (!target || target.startsWith('http') || target.startsWith('#') || target.startsWith('mailto:') || target.startsWith('tel:') || anchor.hasAttribute('target')) return;
+      e.preventDefault();
+      document.body.style.transition = 'opacity 0.22s ease-out, transform 0.22s ease-out';
+      document.body.style.opacity = '0';
+      document.body.style.transform = 'translateY(-6px)';
+      setTimeout(() => {
+        window.location.href = target;
+      }, 200);
+    });
+  });
+}
 
 /* ==========================================================================
    1. Mobile Navigation & Sticky Header
