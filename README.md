@@ -12,10 +12,10 @@
 
 | Sr. No. | Founder Name | Role | UCID / Roll No. | Contact Email | Helpline Phone |
 | :---: | :--- | :--- | :---: | :--- | :--- |
-| **1** | **Aryan Dandekar** | CTO — Technology & Platform | `2025510014` | `aryan.dandekar25@spit.ac.in` | +91 8390666246 |
-| **2** | **Meet Gangwal** | CEO — Business Strategy | `2025510018` | `meet.gangwal25@spit.ac.in` | +91 9326678457 |
-| **3** | **Sujal Meshram** | COO — Operations & Retailer Coordination | `2025510040` | `sujal.meshram25@spit.ac.in` | +91 9657652441 |
-| **4** | **Nupur Thakur** | Marketing & Finance Lead | `2025510066` | `nupur.thakur25@spit.ac.in` | +91 8340602621 |
+| **1** | **Meet Gangwal** | CEO — Business Strategy &amp; Partnerships | `2025510018` | `meet.gangwal25@spit.ac.in` | +91 9326678457 |
+| **2** | **Nupur Thakur** | CPO — Product Strategy &amp; UX Architecture | `2025510066` | `nupur.thakur25@spit.ac.in` | +91 8340602621 |
+| **3** | **Aryan Dandekar** | CTO — Technology &amp; Platform | `2025510014` | `aryan.dandekar25@spit.ac.in` | +91 8390666246 |
+| **4** | **Sujal Meshram** | COO — Operations &amp; Retailer Coordination | `2025510040` | `sujal.meshram25@spit.ac.in` | +91 9657652441 |
 
 **Registered Project Address:** Grace Pinnacle, 1105, Andheri West, Mumbai, Maharashtra 400058
 
