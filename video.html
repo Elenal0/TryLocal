@@ -23,9 +23,6 @@
         <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
-        <a href="mailto:nupur.thakur25@spit.ac.in">
-          <span>✉ nupur.thakur25@spit.ac.in</span>
-        </a>
         <span>📍 Andheri West, Mumbai</span>
       </div>
     </div>
@@ -79,32 +76,17 @@
         <!-- 16:9 Aspect Ratio Frame Container -->
         <div class="video-frame-aspect">
           
-          <!-- Iframe for Live Embedded Google Drive or YouTube Video -->
+          <!-- Iframe for Live Embedded Google Drive Video -->
           <iframe 
             id="trylocal-video-iframe"
             title="TryLocal Pitch Video Player"
-            src=""
-            style="display:none;"
+            src="https://drive.google.com/file/d/1EXAqi4V9Hag-8HY2-lWvq5NryW11QBE4/preview"
+            style="display:block; width:100%; height:100%; border:none;"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
 
-          <!-- Sleek Interactive Video Placeholder & Concept Teaser -->
-          <div class="video-placeholder-overlay" id="video-placeholder">
-            <div class="video-play-btn-circle" id="video-play-trigger" title="Play Video Demo">
-              ▶
-            </div>
-            <h2 style="color:#FFFFFF; font-size:1.75rem; margin-bottom:0.5rem; letter-spacing:-0.02em;">
-              TryLocal — "Your Favourite Fits, Tried at Home"
-            </h2>
-            <p style="color:#CBD5E1; max-width:560px; font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem;">
-              Concept Video Pitch • Hyperlocal fashion delivery, in-home fitting trial, and instant spot-return logistics in Mumbai.
-            </p>
-            <div style="background:rgba(255,255,255,0.12); padding:0.5rem 1.25rem; border-radius:var(--radius-full); font-size:0.8rem; color:#A7F3D0; display:inline-flex; align-items:center; gap:0.5rem;">
-              <span>⚡ Placeholder Link:</span>
-              <code>https://drive.google.com/file/d/YOUR_VIDEO_ID/preview</code>
-            </div>
-          </div>
+
         </div>
 
         <!-- Custom Video Link Input Bar for Quick Testing -->
@@ -116,8 +98,8 @@
             type="text" 
             id="custom-video-url" 
             class="video-url-input" 
-            placeholder="Paste your Google Drive link (e.g. https://drive.google.com/file/d/YOUR_VIDEO_ID/view)"
-            value="https://drive.google.com/file/d/YOUR_VIDEO_ID/view"
+            placeholder="Google Drive or YouTube link"
+            value="https://drive.google.com/file/d/1EXAqi4V9Hag-8HY2-lWvq5NryW11QBE4/view?usp=sharing"
           >
           <button class="btn btn-sm btn-primary" id="btn-update-video">
             <span>Embed &amp; Play</span>

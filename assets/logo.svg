@@ -1,36 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="340" height="70">
-  <defs>
-    <linearGradient id="tlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10B981" />
-      <stop offset="100%" stop-color="#059669" />
-    </linearGradient>
-    <linearGradient id="tlBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1D4ED8" />
-      <stop offset="100%" stop-color="#0F2B5C" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Icon Mark: Combined Hanger & Location Pin -->
-  <g transform="translate(4, 5)">
-    <!-- Outer Glow Circle -->
-    <rect x="0" y="0" width="60" height="60" rx="16" fill="url(#tlGrad)" />
-    <!-- Location Pin Base -->
-    <circle cx="30" cy="24" r="14" fill="#ffffff" />
-    <circle cx="30" cy="24" r="7" fill="#059669" />
-    <!-- Clothes Hanger Shape inside Pin -->
-    <path d="M 30 18 C 28 15, 32 12, 34 14 C 35 15, 34 17, 30 19 L 20 28 L 40 28 Z" fill="#0F2B5C" opacity="0.95" />
-    <path d="M 24 37 L 30 48 L 36 37 Z" fill="#ffffff" />
-    <!-- Subtle Shopping Bag Notch -->
-    <path d="M 23 48 L 37 48 L 35 52 L 25 52 Z" fill="#ffffff" opacity="0.8" />
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64">
+  <!-- Pin & TL Monogram Icon Mark -->
+  <g transform="translate(6, 4)">
+    <!-- Outer Pin Shape with elegant cutout -->
+    <!-- Center of circular head is roughly at (24, 23), radius 17 -->
+    <path d="M 24 53 
+             L 8.5 27 
+             A 17 17 0 1 1 39.5 28 
+             C 39.5 31.5 38.5 35 37.5 36" 
+          fill="none" 
+          stroke="#4A413C" 
+          stroke-width="3.2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+    
+    <!-- Bottom right arm of the pin -->
+    <path d="M 24 53 L 31.5 43.5" 
+          fill="none" 
+          stroke="#4A413C" 
+          stroke-width="3.2" 
+          stroke-linecap="round" />
+
+    <!-- "T" -->
+    <!-- Top bar -->
+    <path d="M 13.5 17.5 L 28.5 17.5" 
+          stroke="#4A413C" 
+          stroke-width="3.6" 
+          stroke-linecap="square" />
+    <!-- Vertical stem -->
+    <path d="M 19.5 17.5 L 19.5 41" 
+          stroke="#4A413C" 
+          stroke-width="3.8" 
+          stroke-linecap="square" />
+
+    <!-- "L" -->
+    <!-- Vertical stem -->
+    <path d="M 26.5 24 L 26.5 41" 
+          stroke="#4A413C" 
+          stroke-width="3.6" 
+          stroke-linecap="square" />
+    <!-- Horizontal foot -->
+    <path d="M 26.5 41 L 37.5 41" 
+          stroke="#4A413C" 
+          stroke-width="3.6" 
+          stroke-linecap="square" />
   </g>
 
-  <!-- Typography -->
-  <g transform="translate(76, 12)">
-    <text x="0" y="32" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" fill="#0F2B5C" letter-spacing="-0.8">
-      Try<tspan fill="#10B981">Local</tspan>
+  <!-- Brand Typography -->
+  <g transform="translate(64, 8)">
+    <text x="0" y="30" font-family="'Plus Jakarta Sans', 'Outfit', -apple-system, sans-serif" font-size="28" font-weight="800" fill="#4A413C" letter-spacing="-0.5">
+      Try<tspan fill="#BB6C43">Local</tspan>
     </text>
-    <text x="2" y="47" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#64748B" letter-spacing="0.3">
-      YOUR FAVOURITE FITS, TRIED AT HOME
+    <text x="1" y="44" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#6B5A52" letter-spacing="1.2">
+      FASHION HOME TRIALS
     </text>
   </g>
 </svg>
