@@ -1939,27 +1939,27 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .site-footer {
   position: relative;
-  background: #060B12;
-  color: #94A3B8;
+  background: #080E17;
+  color: #CBD5E1;
   padding: 4.5rem 0 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
 
-/* Faded boutique atmosphere background */
+/* Faded yet visibly atmospheric boutique background */
 .site-footer::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 80% 25%, rgba(187, 108, 67, 0.22) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(6, 11, 18, 0.90) 0%, rgba(6, 11, 18, 0.82) 40%, rgba(6, 11, 18, 0.95) 100%),
+    radial-gradient(circle at 75% 25%, rgba(187, 108, 67, 0.35) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(10, 16, 26, 0.82) 0%, rgba(10, 16, 26, 0.72) 45%, rgba(6, 11, 18, 0.88) 100%),
     url('../assets/trylocal_mumbai_boutique.jpg');
-  background-position: center 30%;
+  background-position: center 35%;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.38;
-  filter: saturate(125%) contrast(115%);
+  opacity: 0.65;
+  filter: saturate(135%) contrast(110%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1968,6 +1968,12 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer > * {
   position: relative;
   z-index: 1;
+}
+
+.site-footer p, 
+.site-footer span,
+.site-footer li {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
 }
 
 .footer-grid {
@@ -1983,7 +1989,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
 }
 
 .footer-links {

@@ -14,17 +14,17 @@
   <style>
     /* Specific styling for the authentic Startup Profile document */
     .profile-doc-wrapper {
-      max-width: 1000px;
+      max-width: 960px;
       margin: 0 auto 3rem auto;
     }
 
-    .profile-view-toolbar {
+    .profile-action-banner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem 1.75rem;
+      padding: 1.15rem 1.75rem;
       background: #FFFFFF;
       border-radius: var(--radius-md);
       border: 1px solid var(--border-light);
@@ -32,62 +32,11 @@
       margin-bottom: 2rem;
     }
 
-    .profile-tab-group {
-      display: inline-flex;
-      background: #EBEFEE;
-      padding: 0.3rem;
-      border-radius: 9999px;
-      gap: 0.35rem;
-    }
-
-    .profile-tab-btn {
-      padding: 0.45rem 1.15rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .profile-tab-btn.active {
-      background: #FFFFFF;
-      color: #BB6C43;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Authentic PDF Images Stack */
-    .profile-pdf-pages-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .profile-pdf-sheet {
-      background: #FFFFFF;
-      border-radius: 8px;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      max-width: 820px;
-      width: 100%;
-    }
-
-    .profile-pdf-sheet img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
     /* Interactive HTML Document View (Mimicking official A4 document) */
     .profile-a4-sheet {
       background: #FFFFFF;
       border-radius: 8px;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
       border: 1px solid #E2E8F0;
       padding: 3.5rem 3.5rem 4rem 3.5rem;
       margin-bottom: 2.5rem;
@@ -326,7 +275,6 @@
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
         <span class="top-bar-badge">Live in Mumbai</span>
         <span>⚡ 30-Min In-Home Fashion Trials in Andheri West, Bandra &amp; Juhu</span>
-        <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
         <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
@@ -337,17 +285,17 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header (Consistent Across All Pages) -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand-link">
+      <a href="index.html" class="brand-link" id="brand-logo-link">
         <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
       </a>
 
       <nav>
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
-          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">Shop</a></li>
           <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
           <li><a href="profile.html" class="nav-link active" id="nav-profile">Startup Profile</a></li>
@@ -358,10 +306,7 @@
 
       <div class="nav-cta-group">
         <div id="header-auth-area"></div>
-        <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-primary action-download-profile" id="btn-header-profile-download">
-          <span>📥 Download Profile (PDF)</span>
-        </a>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
           <span></span>
           <span></span>
           <span></span>
@@ -374,49 +319,23 @@
   <main style="padding-top:2.5rem; padding-bottom:4rem;">
     <div class="container profile-doc-wrapper">
 
-      <!-- View Toolbar & Tabs -->
-      <div class="profile-view-toolbar">
-        <div class="profile-tab-group" role="tablist">
-          <button class="profile-tab-btn active" id="tab-btn-doc" onclick="switchProfileTab('doc')" role="tab" aria-selected="true">
-            <span>📄 Official 2-Page PDF Document</span>
-          </button>
-          <button class="profile-tab-btn" id="tab-btn-interactive" onclick="switchProfileTab('interactive')" role="tab" aria-selected="false">
-            <span>✨ Interactive Academic Sheet</span>
-          </button>
+      <!-- Action Banner -->
+      <div class="profile-action-banner">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1.35rem;">📋</span>
+          <div>
+            <strong style="color:var(--color-primary); font-size:0.95rem;">TryLocal Official Startup Profile (2 Pages)</strong>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Sardar Patel Institute of Technology (SPIT), Mumbai • MCA EIPR Course</div>
+          </div>
         </div>
 
-        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-primary action-download-profile">
-            <span>📥 Download Startup Profile PDF</span>
-          </a>
-        </div>
+        <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-primary action-download-profile">
+          <span>📥 Download Official PDF (Google Drive)</span>
+        </a>
       </div>
 
-      <!-- 1. Authentic PDF Document View (Default) -->
-      <div id="profile-view-doc" class="profile-pdf-pages-stack">
-        
-        <!-- Sheet Page 1 -->
-        <div class="profile-pdf-sheet">
-          <div style="background:#FAF8F5; padding:0.6rem 1rem; border-bottom:1px solid #E2E8F0; font-size:0.78rem; font-weight:700; color:#B45309; display:flex; justify-content:space-between;">
-            <span>STARTUP PROFILE — PAGE 1 OF 2</span>
-            <span>SPIT MUMBAI • EIPR COURSE</span>
-          </div>
-          <img src="assets/startup_profile_page1.png" alt="Startup Profile Page 1">
-        </div>
-
-        <!-- Sheet Page 2 -->
-        <div class="profile-pdf-sheet">
-          <div style="background:#FAF8F5; padding:0.6rem 1rem; border-bottom:1px solid #E2E8F0; font-size:0.78rem; font-weight:700; color:#B45309; display:flex; justify-content:space-between;">
-            <span>STARTUP PROFILE — PAGE 2 OF 2</span>
-            <span>SPIT MUMBAI • EIPR COURSE</span>
-          </div>
-          <img src="assets/startup_profile_page2.png" alt="Startup Profile Page 2">
-        </div>
-
-      </div>
-
-      <!-- 2. Interactive Academic Document Sheet (Faithful HTML Replica) -->
-      <div id="profile-view-interactive" style="display:none;">
+      <!-- Interactive Academic Document Sheet (Directly Visible) -->
+      <div id="profile-interactive-container">
 
         <!-- PAGE 1 SHEET -->
         <div class="profile-a4-sheet" id="interactive-page-1">
@@ -630,7 +549,7 @@
 
         </div>
 
-      </div><!-- /profile-view-interactive -->
+      </div><!-- /profile-interactive-container -->
 
       <!-- Action Cards Below Profile Sheet -->
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:2rem;">
@@ -683,29 +602,5 @@
 
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    function switchProfileTab(mode) {
-      const docView = document.getElementById('profile-view-doc');
-      const interactiveView = document.getElementById('profile-view-interactive');
-      const btnDoc = document.getElementById('tab-btn-doc');
-      const btnInteractive = document.getElementById('tab-btn-interactive');
-
-      if (mode === 'doc') {
-        docView.style.display = 'flex';
-        interactiveView.style.display = 'none';
-        btnDoc.classList.add('active');
-        btnDoc.setAttribute('aria-selected', 'true');
-        btnInteractive.classList.remove('active');
-        btnInteractive.setAttribute('aria-selected', 'false');
-      } else {
-        docView.style.display = 'none';
-        interactiveView.style.display = 'block';
-        btnInteractive.classList.add('active');
-        btnInteractive.setAttribute('aria-selected', 'true');
-        btnDoc.classList.remove('active');
-        btnDoc.setAttribute('aria-selected', 'false');
-      }
-    }
-  </script>
 </body>
 </html>

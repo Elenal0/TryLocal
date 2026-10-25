@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Official Brochure | TryLocal — Hyperlocal Fashion Home Trials Mumbai</title>
-  <meta name="description" content="View and download the official TryLocal Brochure (v5). Bringing Mumbai's neighbourhood fashion boutiques straight to your doorstep for home trials.">
+  <meta name="description" content="Official TryLocal Brochure (v5). Bringing Mumbai's neighbourhood fashion boutiques straight to your doorstep for home trials.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -17,71 +17,20 @@
       background: #FFFFFF;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-light);
-      box-shadow: 0 12px 36px -8px rgba(74, 65, 60, 0.15);
+      box-shadow: 0 16px 44px -8px rgba(74, 65, 60, 0.16);
       overflow: hidden;
       margin-bottom: 2.5rem;
     }
 
-    .brochure-view-nav {
+    .brochure-action-banner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem 1.75rem;
-      background: #FDFBF9;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .brochure-tab-group {
-      display: inline-flex;
-      background: #EBEFEE;
-      padding: 0.3rem;
-      border-radius: 9999px;
-      gap: 0.35rem;
-    }
-
-    .brochure-tab-btn {
-      padding: 0.45rem 1.15rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .brochure-tab-btn.active {
+      padding: 1.15rem 1.75rem;
       background: #FFFFFF;
-      color: #BB6C43;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Document visual frame */
-    .brochure-doc-frame {
-      padding: 2rem;
-      background: #F1EFEA;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .brochure-doc-img-wrap {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-      overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      position: relative;
-    }
-
-    .brochure-doc-img-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
+      border-bottom: 1px solid var(--border-light);
     }
 
     /* Interactive layout faithfully matching brochure_v5 */
@@ -96,7 +45,7 @@
     .brochure-col-left {
       background-color: #B85C38;
       color: #FFFFFF;
-      padding: 2.5rem 2.25rem;
+      padding: 2.75rem 2.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -304,7 +253,6 @@
       <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
         <span class="top-bar-badge">Live in Mumbai</span>
         <span>⚡ 30-Min In-Home Fashion Trials in Andheri West, Bandra &amp; Juhu</span>
-        <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
         <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
@@ -315,17 +263,17 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header (Consistent Across All Pages) -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand-link">
+      <a href="index.html" class="brand-link" id="brand-logo-link">
         <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
       </a>
 
       <nav>
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
-          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">Shop</a></li>
           <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
           <li><a href="profile.html" class="nav-link" id="nav-profile">Startup Profile</a></li>
@@ -336,9 +284,6 @@
 
       <div class="nav-cta-group">
         <div id="header-auth-area"></div>
-        <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-sm btn-primary action-download-brochure" id="btn-header-brochure-download">
-          <span>📥 Download Brochure (PDF)</span>
-        </a>
         <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
           <span></span>
           <span></span>
@@ -364,36 +309,23 @@
       <!-- Main Brochure Showcase Container -->
       <div class="brochure-hero-wrapper">
         
-        <!-- View Toolbar & Tabs -->
-        <div class="brochure-view-nav">
-          <div class="brochure-tab-group" role="tablist">
-            <button class="brochure-tab-btn active" id="tab-btn-doc" onclick="switchBrochureTab('doc')" role="tab" aria-selected="true">
-              <span>📄 Official PDF Document View</span>
-            </button>
-            <button class="brochure-tab-btn" id="tab-btn-interactive" onclick="switchBrochureTab('interactive')" role="tab" aria-selected="false">
-              <span>✨ Interactive Web Edition</span>
-            </button>
+        <!-- Action Banner -->
+        <div class="brochure-action-banner">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <span style="font-size:1.25rem;">📑</span>
+            <div>
+              <strong style="color:var(--color-primary); font-size:0.95rem;">TryLocal Brochure (v5)</strong>
+              <div style="font-size:0.75rem; color:var(--text-muted);">SPIT Mumbai MCA Venture • Andheri West, Mumbai</div>
+            </div>
           </div>
 
-          <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-            <a href="assets/brochure_v5_page1.png" target="_blank" class="btn btn-sm btn-outline" style="font-size:0.8rem;">
-              <span>🔍 View Full Res</span>
-            </a>
-            <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-sm btn-primary action-download-brochure">
-              <span>📥 Download Brochure PDF</span>
-            </a>
-          </div>
+          <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-primary action-download-brochure">
+            <span>📥 Download Official PDF (Google Drive)</span>
+          </a>
         </div>
 
-        <!-- 1. Authentic PDF Document View (Default) -->
-        <div id="brochure-view-doc" class="brochure-doc-frame">
-          <div class="brochure-doc-img-wrap">
-            <img src="assets/brochure_v5_page1.png" alt="Official TryLocal Brochure v5" id="brochure-v5-preview-img">
-          </div>
-        </div>
-
-        <!-- 2. Responsive Interactive HTML Edition -->
-        <div id="brochure-view-interactive" class="brochure-interactive-grid" style="display:none;">
+        <!-- Interactive Layout Directly Visible -->
+        <div class="brochure-interactive-grid" id="brochure-main-interactive">
           
           <!-- Left Column (Terracotta) -->
           <div class="brochure-col-left">
@@ -484,7 +416,7 @@
         
         <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
           <div style="font-size:1.8rem; margin-bottom:0.5rem;">📥</div>
-          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Download Official Brochure</h3>
+          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Download Official Brochure PDF</h3>
           <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
             Direct high-definition PDF file stored in Google Drive. Perfect for offline review, printing, or academic submission.
           </p>
@@ -530,29 +462,5 @@
 
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    function switchBrochureTab(mode) {
-      const docView = document.getElementById('brochure-view-doc');
-      const interactiveView = document.getElementById('brochure-view-interactive');
-      const btnDoc = document.getElementById('tab-btn-doc');
-      const btnInteractive = document.getElementById('tab-btn-interactive');
-
-      if (mode === 'doc') {
-        docView.style.display = 'flex';
-        interactiveView.style.display = 'none';
-        btnDoc.classList.add('active');
-        btnDoc.setAttribute('aria-selected', 'true');
-        btnInteractive.classList.remove('active');
-        btnInteractive.setAttribute('aria-selected', 'false');
-      } else {
-        docView.style.display = 'none';
-        interactiveView.style.display = 'grid';
-        btnInteractive.classList.add('active');
-        btnInteractive.setAttribute('aria-selected', 'true');
-        btnDoc.classList.remove('active');
-        btnDoc.setAttribute('aria-selected', 'false');
-      }
-    }
-  </script>
 </body>
 </html>
