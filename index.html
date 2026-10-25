@@ -192,85 +192,365 @@
       </div>
     </section>
 
-    <!-- How It Works — Horizontal Carousel -->
-    <section class="hiw-section" id="how-it-works">
+    <!-- How It Works — Swipable Left-Right Step Card Showcase -->
+    <section class="section-py" id="how-it-works" style="background:#FAF8F5; padding: 4.5rem 0;">
+      <!-- Scoped styling to ensure instant, reliable rendering -->
+      <style>
+        .hiw-slider-card-container {
+          max-width: 960px;
+          margin: 0 auto;
+        }
+        .hiw-step-tabs {
+          display: flex;
+          justify-content: center;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+          flex-wrap: wrap;
+        }
+        .hiw-tab-btn {
+          background: #FFFFFF;
+          border: 1px solid rgba(204, 180, 153, 0.45);
+          border-radius: 9999px;
+          padding: 0.5rem 1.25rem;
+          font-size: 0.88rem;
+          font-weight: 700;
+          color: #4A413C;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.25s ease;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .hiw-tab-btn .tab-num {
+          font-size: 0.75rem;
+          background: #EBEFEE;
+          color: #BB6C43;
+          padding: 0.15rem 0.45rem;
+          border-radius: 9999px;
+          font-weight: 800;
+        }
+        .hiw-tab-btn.active {
+          background: #BB6C43;
+          color: #FFFFFF;
+          border-color: #BB6C43;
+          box-shadow: 0 4px 14px rgba(187, 108, 67, 0.35);
+        }
+        .hiw-tab-btn.active .tab-num {
+          background: rgba(255, 255, 255, 0.25);
+          color: #FFFFFF;
+        }
+        .hiw-slider-card {
+          position: relative;
+          background: #FFFFFF;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 20px 50px rgba(74, 65, 60, 0.14);
+          border: 1px solid rgba(204, 180, 153, 0.4);
+          touch-action: pan-y;
+          user-select: none;
+        }
+        .hiw-slider-viewport {
+          overflow: hidden;
+          width: 100%;
+        }
+        .hiw-slider-track {
+          display: flex;
+          width: 400%;
+          transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+          will-change: transform;
+        }
+        .hiw-card-slide {
+          width: 25%;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: row;
+          min-height: 420px;
+          box-sizing: border-box;
+        }
+        .hiw-card-img-col {
+          flex: 1.1;
+          position: relative;
+          overflow: hidden;
+          min-height: 420px;
+          background: #EBEFEE;
+        }
+        .hiw-card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.6s ease;
+        }
+        .hiw-card-slide:hover .hiw-card-img {
+          transform: scale(1.03);
+        }
+        .hiw-step-tag {
+          position: absolute;
+          top: 1.25rem;
+          left: 1.25rem;
+          background: #BB6C43;
+          color: #FFFFFF;
+          font-size: 0.78rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          padding: 0.35rem 0.85rem;
+          border-radius: 9999px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .hiw-card-content-col {
+          flex: 1.2;
+          padding: 3rem 2.5rem 3rem 3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: #FFFFFF;
+        }
+        .hiw-pill-mini {
+          display: inline-block;
+          align-self: flex-start;
+          font-size: 0.75rem;
+          font-weight: 800;
+          color: #BB6C43;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          margin-bottom: 0.75rem;
+        }
+        .hiw-card-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: #4A413C;
+          line-height: 1.25;
+          margin-bottom: 1rem;
+        }
+        .hiw-card-desc {
+          font-size: 0.95rem;
+          color: #6B5A52;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+        .hiw-card-feature {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #4A413C;
+          background: #FAF8F5;
+          border: 1px solid rgba(204, 180, 153, 0.4);
+          padding: 0.65rem 1rem;
+          border-radius: 10px;
+        }
+        .hiw-card-feature .hcf-icon {
+          font-size: 1.1rem;
+        }
+        .hiw-nav-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: #FFFFFF;
+          border: 1px solid rgba(204, 180, 153, 0.5);
+          color: #4A413C;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+          transition: all 0.2s ease;
+          z-index: 5;
+        }
+        .hiw-nav-arrow:hover {
+          background: #BB6C43;
+          color: #FFFFFF;
+          border-color: #BB6C43;
+          transform: translateY(-50%) scale(1.08);
+        }
+        .hiw-nav-prev { left: 1rem; }
+        .hiw-nav-next { right: 1rem; }
+        .hiw-slider-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 1.25rem;
+          padding: 0 0.5rem;
+        }
+        .hiw-dots-group {
+          display: flex;
+          gap: 0.5rem;
+        }
+        .hiw-slider-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #CCB499;
+          border: none;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          padding: 0;
+        }
+        .hiw-slider-dot.active {
+          width: 28px;
+          border-radius: 9999px;
+          background: #BB6C43;
+        }
+        .hiw-swipe-hint {
+          font-size: 0.78rem;
+          color: #6B5A52;
+          font-weight: 600;
+        }
+        @media (max-width: 768px) {
+          .hiw-card-slide {
+            flex-direction: column;
+            min-height: auto;
+          }
+          .hiw-card-img-col {
+            min-height: 220px;
+            height: 220px;
+          }
+          .hiw-card-content-col {
+            padding: 1.75rem 1.5rem 2rem;
+          }
+          .hiw-card-title {
+            font-size: 1.35rem;
+          }
+          .hiw-nav-arrow {
+            display: none;
+          }
+        }
+      </style>
+
       <div class="container">
-        <div class="section-header" style="margin-bottom:2rem;">
-          <span class="badge badge-amber section-tag">The Journey</span>
-          <h2 class="section-title">How It Works</h2>
-          <p class="section-subtitle">Four simple steps, zero stress.</p>
+        <div class="section-header" style="margin-bottom:2rem; text-align:center;">
+          <span class="badge badge-amber section-tag">The 4-Step Experience</span>
+          <h2 class="section-title">How TryLocal Works</h2>
+          <p class="section-subtitle" style="color:#6B5A52; max-width:580px; margin:0 auto;">
+            Swipe left or right to explore each step of your in-home fashion trial.
+          </p>
         </div>
-      </div>
 
-      <!-- Carousel -->
-      <div class="hiw-carousel-wrap">
-        <button class="hiw-ctrl hiw-ctrl-prev" id="hiw-prev" aria-label="Previous step">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-
-        <div class="hiw-track" id="hiw-track">
-
-          <div class="hiw-slide" id="hiws-1">
-            <div class="hiw-slide-img">
-              <img src="assets/trylocal_mumbai_boutique.jpg" alt="Browse boutiques">
-              <span class="hiw-num">01</span>
-            </div>
-            <div class="hiw-slide-body">
-              <div class="hiw-slide-icon">📍</div>
-              <h3 class="hiw-slide-title">Browse &amp; Select</h3>
-              <p class="hiw-slide-text">Pick 3–5 outfits from curated local Mumbai boutiques within minutes.</p>
-            </div>
+        <!-- Swipable Showcase Card Container -->
+        <div class="hiw-slider-card-container">
+          <!-- Step Selector Tabs -->
+          <div class="hiw-step-tabs" id="hiw-step-tabs">
+            <button class="hiw-tab-btn active" data-step="0"><span class="tab-num">01</span> Browse</button>
+            <button class="hiw-tab-btn" data-step="1"><span class="tab-num">02</span> Deliver</button>
+            <button class="hiw-tab-btn" data-step="2"><span class="tab-num">03</span> Try-On</button>
+            <button class="hiw-tab-btn" data-step="3"><span class="tab-num">04</span> Keep</button>
           </div>
 
-          <div class="hiw-slide" id="hiws-2">
-            <div class="hiw-slide-img">
-              <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep delivery">
-              <span class="hiw-num" style="background:#C8906D;">02</span>
-            </div>
-            <div class="hiw-slide-body">
-              <div class="hiw-slide-icon">🛵</div>
-              <h3 class="hiw-slide-title">45-Min Doorstep Drop</h3>
-              <p class="hiw-slide-text">A TryLocal valet brings your sanitised garment bag straight to your door.</p>
-            </div>
+          <!-- Main Slider Card Frame -->
+          <div class="hiw-slider-card" id="hiw-slider-card">
+            <!-- Viewport -->
+            <div class="hiw-slider-viewport" id="hiw-slider-viewport">
+              <!-- Slides Track -->
+              <div class="hiw-slider-track" id="hiw-slider-track">
+
+                <!-- Slide 1 -->
+                <div class="hiw-card-slide" id="hiw-step-1">
+                  <div class="hiw-card-img-col">
+                    <img src="assets/trylocal_mumbai_boutique.jpg" alt="Browse Mumbai Boutiques" class="hiw-card-img">
+                    <span class="hiw-step-tag">Step 01</span>
+                  </div>
+                  <div class="hiw-card-content-col">
+                    <span class="hiw-pill-mini">📍 Local Discovery</span>
+                    <h3 class="hiw-card-title">Browse &amp; Select Outfits</h3>
+                    <p class="hiw-card-desc">
+                      Pick 3 to 5 pieces from verified boutiques across Mumbai (Andheri West, Bandra &amp; Juhu). Real-time boutique stock without waiting days for shipping.
+                    </p>
+                    <div class="hiw-card-feature">
+                      <span class="hcf-icon">✨</span>
+                      <span>Zero upfront deposit · Select multiple sizes &amp; colors</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hiw-card-slide" id="hiw-step-2">
+                  <div class="hiw-card-img-col">
+                    <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep Handover" class="hiw-card-img">
+                    <span class="hiw-step-tag" style="background:#C8906D;">Step 02</span>
+                  </div>
+                  <div class="hiw-card-content-col">
+                    <span class="hiw-pill-mini">🛵 Hyperlocal Logistics</span>
+                    <h3 class="hiw-card-title">45-Minute Doorstep Drop</h3>
+                    <p class="hiw-card-desc">
+                      Our TryLocal runner collects your garments directly from the boutique and delivers a fresh, sanitized garment bag straight to your home at your booked slot.
+                    </p>
+                    <div class="hiw-card-feature">
+                      <span class="hcf-icon">⏱️</span>
+                      <span>Guaranteed arrival window · Direct store-to-door transit</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hiw-card-slide" id="hiw-step-3">
+                  <div class="hiw-card-img-col">
+                    <img src="assets/trylocal_fitting_mirror.jpg" alt="Try In Mirror" class="hiw-card-img">
+                    <span class="hiw-step-tag" style="background:#CCB499; color:#4A413C;">Step 03</span>
+                  </div>
+                  <div class="hiw-card-content-col">
+                    <span class="hiw-pill-mini">🪞 In-Home Fitting</span>
+                    <h3 class="hiw-card-title">30-Minute Mirror Trial</h3>
+                    <p class="hiw-card-desc">
+                      Try everything on in the comfort of your bedroom. Feel fabrics, pair pieces with your own shoes and accessories, and see real colors in natural home daylight.
+                    </p>
+                    <div class="hiw-card-feature">
+                      <span class="hcf-icon">👗</span>
+                      <span>Complete privacy · Zero rushing or awkward fitting rooms</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="hiw-card-slide" id="hiw-step-4">
+                  <div class="hiw-card-img-col">
+                    <img src="assets/trylocal_unboxing_kit.jpg" alt="Keep What Fits" class="hiw-card-img">
+                    <span class="hiw-step-tag" style="background:#4A413C;">Step 04</span>
+                  </div>
+                  <div class="hiw-card-content-col">
+                    <span class="hiw-pill-mini">💳 Instant Settlement</span>
+                    <h3 class="hiw-card-title">Keep What Fits, Return The Rest</h3>
+                    <p class="hiw-card-desc">
+                      Pay only for what you love via UPI or card. Hand unwanted pieces back to the runner on the spot with zero repacking, return labels, or courier waits.
+                    </p>
+                    <div class="hiw-card-feature">
+                      <span class="hcf-icon">🎉</span>
+                      <span>Instant checkout · Trial fee 100% waived upon purchase</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /hiw-slider-track -->
+            </div><!-- /hiw-slider-viewport -->
+
+            <!-- Navigation Controls Overlay -->
+            <button class="hiw-nav-arrow hiw-nav-prev" id="hiw-card-prev" aria-label="Previous step">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="hiw-nav-arrow hiw-nav-next" id="hiw-card-next" aria-label="Next step">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
           </div>
 
-          <div class="hiw-slide" id="hiws-3">
-            <div class="hiw-slide-img">
-              <img src="assets/trylocal_fitting_mirror.jpg" alt="Mirror fitting">
-              <span class="hiw-num" style="background:#CCB499; color:#4A413C;">03</span>
+          <!-- Slider Indicators & Swipe Hint -->
+          <div class="hiw-slider-footer">
+            <div class="hiw-dots-group" id="hiw-dots-group">
+              <button class="hiw-slider-dot active" data-step="0" aria-label="Step 1"></button>
+              <button class="hiw-slider-dot" data-step="1" aria-label="Step 2"></button>
+              <button class="hiw-slider-dot" data-step="2" aria-label="Step 3"></button>
+              <button class="hiw-slider-dot" data-step="3" aria-label="Step 4"></button>
             </div>
-            <div class="hiw-slide-body">
-              <div class="hiw-slide-icon">🪞</div>
-              <h3 class="hiw-slide-title">Try in Your Mirror</h3>
-              <p class="hiw-slide-text">30 minutes in the privacy of your own bedroom. Real light, real feel.</p>
-            </div>
-          </div>
-
-          <div class="hiw-slide" id="hiws-4">
-            <div class="hiw-slide-img">
-              <img src="assets/trylocal_unboxing_kit.jpg" alt="Keep what fits">
-              <span class="hiw-num" style="background:#4A413C;">04</span>
-            </div>
-            <div class="hiw-slide-body">
-              <div class="hiw-slide-icon">💳</div>
-              <h3 class="hiw-slide-title">Keep What You Love</h3>
-              <p class="hiw-slide-text">Pay only for keepers. Hand back the rest instantly — no packaging, no wait.</p>
+            <div class="hiw-swipe-hint">
+              <span>👈 Swipe or click tabs to explore steps 👉</span>
             </div>
           </div>
-
-        </div><!-- /hiw-track -->
-
-        <button class="hiw-ctrl hiw-ctrl-next" id="hiw-next" aria-label="Next step">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-
-      <!-- Dots -->
-      <div class="hiw-dots" id="hiw-dots">
-        <button class="hiw-dot is-active" data-idx="0" aria-label="Step 1"></button>
-        <button class="hiw-dot" data-idx="1" aria-label="Step 2"></button>
-        <button class="hiw-dot" data-idx="2" aria-label="Step 3"></button>
-        <button class="hiw-dot" data-idx="3" aria-label="Step 4"></button>
+        </div>
       </div>
     </section>
 

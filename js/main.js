@@ -414,40 +414,93 @@ function initPdfPrintActions() {
    HIW Carousel Controller
    ========================================================================== */
 function initHIWCarousel() {
-  const track = document.getElementById('hiw-track');
-  const prevBtn = document.getElementById('hiw-prev');
-  const nextBtn = document.getElementById('hiw-next');
-  const dots = document.querySelectorAll('.hiw-dot');
+  const track = document.getElementById('hiw-slider-track');
+  const card = document.getElementById('hiw-slider-card');
+  const prevBtn = document.getElementById('hiw-card-prev');
+  const nextBtn = document.getElementById('hiw-card-next');
+  const tabs = document.querySelectorAll('.hiw-tab-btn');
+  const dots = document.querySelectorAll('.hiw-slider-dot');
+
   if (!track) return;
 
-  const slides = track.querySelectorAll('.hiw-slide');
+  const totalSlides = 4;
   let current = 0;
 
-  function scrollTo(idx) {
-    if (idx < 0) idx = slides.length - 1;
-    if (idx >= slides.length) idx = 0;
+  function goToStep(idx) {
+    if (idx < 0) idx = totalSlides - 1;
+    if (idx >= totalSlides) idx = 0;
     current = idx;
-    const slide = slides[current];
-    track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+
+    // Smooth GPU transform
+    track.style.transform = `translateX(-${current * 25}%)`;
+
+    // Sync tabs
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('active', i === current);
+    });
+
+    // Sync dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => scrollTo(current - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => scrollTo(current + 1));
-  dots.forEach((d, i) => d.addEventListener('click', () => scrollTo(i)));
+  // Prev & Next arrow buttons
+  if (prevBtn) prevBtn.addEventListener('click', () => goToStep(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToStep(current + 1));
 
-  // Update dot on native scroll
-  track.addEventListener('scroll', () => {
-    const scrollLeft = track.scrollLeft;
-    let closest = 0;
-    slides.forEach((s, i) => {
-      if (Math.abs(s.offsetLeft - track.offsetLeft - scrollLeft) < Math.abs(slides[closest].offsetLeft - track.offsetLeft - scrollLeft)) {
-        closest = i;
-      }
+  // Tabs click
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const step = parseInt(tab.getAttribute('data-step') || '0', 10);
+      goToStep(step);
     });
-    current = closest;
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
-  }, { passive: true });
+  });
+
+  // Dots click
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const step = parseInt(dot.getAttribute('data-step') || '0', 10);
+      goToStep(step);
+    });
+  });
+
+  // Touch Swipe Support (Mobile & Tablet)
+  if (card) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    card.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    card.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          goToStep(current + 1); // Swiped Left -> Next
+        } else {
+          goToStep(current - 1); // Swiped Right -> Prev
+        }
+      }
+    }
+  }
+
+  // Keyboard left/right arrow navigation
+  window.addEventListener('keydown', e => {
+    const section = document.getElementById('how-it-works');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      if (e.key === 'ArrowRight') goToStep(current + 1);
+      if (e.key === 'ArrowLeft') goToStep(current - 1);
+    }
+  });
 }
 
 /* ==========================================================================
