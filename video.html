@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Video Demo | TryLocal — Hyperlocal Fashion Home Trials</title>
+  <meta name="description" content="Watch the non-technical pitch demo video for TryLocal: Your Favourite Fits, Tried at Home. SPIT Mumbai MCA Startup Pitch.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#F8FAFC;">
+
+  <!-- Top Institutional Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+        <span class="top-bar-badge">Academic Practical Pitch</span>
+        <span>Sardar Patel Institute of Technology (SPIT), Mumbai • MCA Course</span>
+        <span style="opacity:0.4;">|</span>
+        <span>Promotional Video Pitch Showcase</span>
+      </div>
+      <div class="top-bar-meta">
+        <a href="index.html">← Back to Main Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="TryLocal Logo" height="46">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home &amp; About</a></li>
+          <li><a href="profile.html" class="nav-link">Startup Profile</a></li>
+          <li><a href="brochure.html" class="nav-link">Brochure</a></li>
+          <li><a href="video.html" class="nav-link active">Pitch Video</a></li>
+          <li><a href="index.html#workflow" class="nav-link">Operations</a></li>
+          <li><a href="index.html#team" class="nav-link">Founding Team</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta-group">
+        <a href="profile.html" class="btn btn-sm btn-outline-primary">
+          <span>Startup Profile</span>
+        </a>
+        <a href="brochure.html" class="btn btn-sm btn-primary">
+          <span>2-Page Brochure</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Video Showcase -->
+  <main class="container section-py-sm">
+    <div class="section-header" style="margin-bottom:2.5rem;">
+      <span class="badge badge-blue section-tag">Elevator Pitch &amp; Concept Demo</span>
+      <h1 class="section-title">Promotional Video Pitch Demo</h1>
+      <p class="section-subtitle">
+        Short non-technical pitch video demonstrating the consumer experience: <em>"Try clothes at home before buying"</em> and how TryLocal empowers local retail businesses in Mumbai.
+      </p>
+    </div>
+
+    <div class="video-section-wrapper">
+      <!-- Player Card Container -->
+      <div class="video-player-card">
+        <!-- 16:9 Aspect Ratio Frame Container -->
+        <div class="video-frame-aspect">
+          
+          <!-- Iframe for Live Embedded Google Drive or YouTube Video -->
+          <iframe 
+            id="trylocal-video-iframe"
+            title="TryLocal Pitch Video Player"
+            src=""
+            style="display:none;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+
+          <!-- Sleek Interactive Video Placeholder & Concept Teaser -->
+          <div class="video-placeholder-overlay" id="video-placeholder">
+            <div class="video-play-btn-circle" id="video-play-trigger" title="Play Video Demo">
+              ▶
+            </div>
+            <h2 style="color:#FFFFFF; font-size:1.75rem; margin-bottom:0.5rem; letter-spacing:-0.02em;">
+              TryLocal — "Your Favourite Fits, Tried at Home"
+            </h2>
+            <p style="color:#CBD5E1; max-width:560px; font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem;">
+              Concept Video Pitch • Hyperlocal fashion delivery, in-home fitting trial, and instant spot-return logistics in Mumbai.
+            </p>
+            <div style="background:rgba(255,255,255,0.12); padding:0.5rem 1.25rem; border-radius:var(--radius-full); font-size:0.8rem; color:#A7F3D0; display:inline-flex; align-items:center; gap:0.5rem;">
+              <span>⚡ Placeholder Link:</span>
+              <code>https://drive.google.com/file/d/YOUR_VIDEO_ID/preview</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Video Link Input Bar for Quick Testing -->
+        <div class="video-custom-url-bar">
+          <label for="custom-video-url" style="color:#CBD5E1; font-size:0.85rem; font-weight:600; white-space:nowrap;">
+            🎬 Video Link / Embed URL:
+          </label>
+          <input 
+            type="text" 
+            id="custom-video-url" 
+            class="video-url-input" 
+            placeholder="Paste your Google Drive link (e.g. https://drive.google.com/file/d/YOUR_VIDEO_ID/view)"
+            value="https://drive.google.com/file/d/YOUR_VIDEO_ID/view"
+          >
+          <button class="btn btn-sm btn-primary" id="btn-update-video">
+            <span>Embed &amp; Play</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Video Synopsis & Chapter Breakdown Grid -->
+      <div class="video-details-grid">
+        <!-- Left Column: Video Pitch Synopsis -->
+        <div>
+          <h3 style="font-size:1.4rem; color:var(--color-primary); margin-bottom:0.75rem;">
+            Pitch Video Script &amp; Concept Overview
+          </h3>
+          <p style="color:#475569; font-size:0.95rem; line-height:1.65; margin-bottom:1.25rem;">
+            This video pitches TryLocal from a student consumer's perspective in Mumbai. It introduces the familiar frustration of buying clothing on traditional e-commerce apps—paying ₹2,000 upfront, waiting 4 days, only to find the medium size is too tight at the chest or the fabric color looks faded compared to the photoshoot.
+          </p>
+          <p style="color:#475569; font-size:0.95rem; line-height:1.65; margin-bottom:1.25rem;">
+            It then transitions into TryLocal: ordering 3 shirts from a boutique right here in Andheri West, welcoming the runner at the door, trying them on in front of the mirror with favorite sneakers, keeping the one perfect fit, and handing the rest back with immediate fee waiver!
+          </p>
+
+          <div style="background:#ECFDF5; border:1px solid #A7F3D0; padding:1.25rem; border-radius:var(--radius-md); font-size:0.875rem; color:#065F46;">
+            <strong>Founder Pitch Quote (Meet Gangwal, CEO):</strong>
+            <p style="font-style:italic; margin-top:0.25rem;">
+              "You wouldn't buy a pair of jeans in a physical mall without stepping into the trial room. Why should you be forced to do that online? TryLocal brings the fitting room to your home."
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Pitch Chapters & Timestamps -->
+        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm);">
+          <h4 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.25rem;">Video Chapters</h4>
+          <span style="font-size:0.78rem; color:var(--text-muted);">Standard 2 to 3-minute pitch structure</span>
+
+          <ul class="pitch-chapter-list">
+            <li class="pitch-chapter-item">
+              <div>
+                <strong>The Hook &amp; Problem</strong>
+                <div style="font-size:0.75rem; color:#64748B;">Fitting dilemma &amp; returns in Mumbai</div>
+              </div>
+              <span class="pitch-timestamp">0:00 - 0:45</span>
+            </li>
+            <li class="pitch-chapter-item">
+              <div>
+                <strong>Introducing TryLocal</strong>
+                <div style="font-size:0.75rem; color:#64748B;">Hyperlocal discovery + home trials</div>
+              </div>
+              <span class="pitch-timestamp">0:45 - 1:30</span>
+            </li>
+            <li class="pitch-chapter-item">
+              <div>
+                <strong>The Doorstep Experience</strong>
+                <div style="font-size:0.75rem; color:#64748B;">15-minute mirror trial &amp; instant return</div>
+              </div>
+              <span class="pitch-timestamp">1:30 - 2:15</span>
+            </li>
+            <li class="pitch-chapter-item">
+              <div>
+                <strong>Boutique Empowerment &amp; Ask</strong>
+                <div style="font-size:0.75rem; color:#64748B;">Retailer digitalization &amp; SPIT team</div>
+              </div>
+              <span class="pitch-timestamp">2:15 - 3:00</span>
+            </li>
+          </ul>
+
+          <div style="margin-top:1.5rem; text-align:center;">
+            <a href="profile.html" class="btn btn-sm btn-outline-primary" style="width:100%;">
+              <span>Read Full Executive Summary →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top:4rem;">
+    <div class="container footer-bottom" style="border:none; padding-top:0;">
+      <div>TryLocal Pitch Video • SPIT Mumbai MCA Practical</div>
+      <div>Grace Pinnacle, 1105, Andheri West, Mumbai</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

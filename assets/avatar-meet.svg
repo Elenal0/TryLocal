@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="bgMeet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#bgMeet)" stroke="#34D399" stroke-width="4"/>
+  <!-- Head & Hair -->
+  <circle cx="80" cy="62" r="30" fill="#FAD7A0"/>
+  <!-- Hair: Executive/slicked side-part -->
+  <path d="M 50 60 C 48 36, 70 28, 92 28 C 110 28, 112 42, 110 58 C 105 48, 95 44, 80 44 C 65 44, 55 52, 50 60 Z" fill="#1E293B"/>
+  <!-- Eyes -->
+  <circle cx="70" cy="62" r="3" fill="#1E293B"/>
+  <circle cx="90" cy="62" r="3" fill="#1E293B"/>
+  <!-- Confident Smile -->
+  <path d="M 72 76 Q 80 83 88 76" stroke="#C2410C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Suit / Blazer -->
+  <path d="M 38 140 C 40 105, 58 98, 80 98 C 102 98, 120 105, 122 140 Z" fill="#0F2B5C"/>
+  <!-- White Shirt & Tie -->
+  <path d="M 74 98 L 80 118 L 86 98 Z" fill="#FFFFFF"/>
+  <path d="M 78 106 L 82 106 L 83 132 L 80 136 L 77 132 Z" fill="#10B981"/>
+  <!-- Monogram Badge -->
+  <circle cx="124" cy="124" r="18" fill="#1D4ED8" stroke="#ffffff" stroke-width="3"/>
+  <text x="124" y="129" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">CEO</text>
+</svg>

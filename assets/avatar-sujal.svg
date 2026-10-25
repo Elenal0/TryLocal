@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="bgSujal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#bgSujal)" stroke="#38BDF8" stroke-width="4"/>
+  <!-- Head & Hair -->
+  <circle cx="80" cy="62" r="30" fill="#EDC4B3"/>
+  <!-- Hair: Dynamic wavy style -->
+  <path d="M 52 56 C 50 34, 76 26, 96 30 C 108 34, 112 48, 108 58 C 102 50, 92 46, 80 46 C 68 46, 58 50, 52 56 Z" fill="#262626"/>
+  <!-- Eyes -->
+  <circle cx="70" cy="62" r="3" fill="#171717"/>
+  <circle cx="90" cy="62" r="3" fill="#171717"/>
+  <!-- Warm Friendly Smile -->
+  <path d="M 72 77 Q 80 84 88 77" stroke="#9A3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Operations Polo Shirt -->
+  <path d="M 38 140 C 40 105, 58 98, 80 98 C 102 98, 120 105, 122 140 Z" fill="#047857"/>
+  <path d="M 70 98 L 80 112 L 90 98 Z" fill="#065F46"/>
+  <circle cx="80" cy="118" r="2" fill="#FFFFFF"/>
+  <circle cx="80" cy="126" r="2" fill="#FFFFFF"/>
+  <!-- Monogram Badge -->
+  <circle cx="124" cy="124" r="18" fill="#0284C7" stroke="#ffffff" stroke-width="3"/>
+  <text x="124" y="129" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">COO</text>
+</svg>

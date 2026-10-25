@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" height="auto">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="920" height="480" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Top Title -->
+  <text x="460" y="36" font-family="'Outfit', sans-serif" font-size="18" font-weight="700" fill="#0F2B5C" text-anchor="middle">
+    TRYLOCAL SYSTEM ARCHITECTURE &amp; PATENT WORKFLOW ENGINE
+  </text>
+  <text x="460" y="56" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748B" text-anchor="middle">
+    Patent Specification Drawing — Form No. 2 Ref: Hyperlocal Clothing Shopping System with Home-Based Trial
+  </text>
+
+  <!-- Level 1: Customer (101) -->
+  <g transform="translate(360, 75)" filter="url(#shadow)">
+    <rect width="200" height="45" rx="8" fill="#0F2B5C" />
+    <text x="100" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">101. Customer (Shopper)</text>
+  </g>
+
+  <!-- Down arrow -->
+  <line x1="460" y1="120" x2="460" y2="145" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Level 2: Mobile App (102) -->
+  <g transform="translate(330, 145)" filter="url(#shadow)">
+    <rect width="260" height="50" rx="8" fill="#10B981" />
+    <text x="130" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">102. Mobile &amp; Web Application</text>
+    <text x="130" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#DCFCE7" text-anchor="middle">Browsing, Cart, Slot Booking &amp; Trial Decision</text>
+  </g>
+
+  <!-- Level 3: Three parallel branches from Mobile App -->
+  <!-- Left branch -->
+  <path d="M 360 195 L 360 215 L 180 215 L 180 240" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Middle branch -->
+  <line x1="460" y1="195" x2="460" y2="240" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Right branch -->
+  <path d="M 560 195 L 560 215 L 740 215 L 740 240" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Box Left: Location & Store Matching (103, 104) -->
+  <g transform="translate(70, 240)" filter="url(#shadow)">
+    <rect width="220" height="70" rx="8" fill="url(#boxGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="110" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0369A1" text-anchor="middle">103. Location Service</text>
+    <line x1="20" y1="34" x2="200" y2="34" stroke="#E2E8F0"/>
+    <text x="110" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0369A1" text-anchor="middle">104. Store Matching Engine</text>
+  </g>
+
+  <!-- Box Middle: Inventory & Selection (105, 106) -->
+  <g transform="translate(350, 240)" filter="url(#shadow)">
+    <rect width="220" height="70" rx="8" fill="url(#boxGrad)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="110" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">105. Inventory Engine</text>
+    <line x1="20" y1="34" x2="200" y2="34" stroke="#E2E8F0"/>
+    <text x="110" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">106. Product Selection Module</text>
+  </g>
+
+  <!-- Box Right: Retailer Dashboard (109) -->
+  <g transform="translate(630, 240)" filter="url(#shadow)">
+    <rect width="220" height="70" rx="8" fill="url(#boxGrad)" stroke="#6366F1" stroke-width="1.5"/>
+    <text x="110" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#4338CA" text-anchor="middle">109. Retailer Dashboard</text>
+    <text x="110" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#64748B" text-anchor="middle">Local Boutique Management</text>
+    <text x="110" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" fill="#64748B" text-anchor="middle">Order Pack &amp; Stock Sync</text>
+  </g>
+
+  <!-- Level 4: Central Execution Modules (107, 108) -->
+  <line x1="460" y1="310" x2="460" y2="335" stroke="#94A3B8" stroke-width="2"/>
+  <g transform="translate(330, 335)" filter="url(#shadow)">
+    <rect width="260" height="55" rx="8" fill="#1E293B"/>
+    <text x="130" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="middle">107. Trial Slot Manager</text>
+    <text x="130" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" text-anchor="middle">108. Order Management Module</text>
+  </g>
+
+  <!-- Level 5: Bottom Fulfillment & Logic Layer -->
+  <path d="M 370 390 L 370 410 L 180 410 L 180 420" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="460" y1="390" x2="460" y2="420" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M 550 390 L 550 410 L 740 410 L 740 420" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Fulfillment Left (110, 111) -->
+  <g transform="translate(70, 420)" filter="url(#shadow)">
+    <rect width="220" height="48" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+    <text x="110" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" fill="#1D4ED8" text-anchor="middle">110. Delivery Management</text>
+    <text x="110" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" fill="#1D4ED8" text-anchor="middle">111. Digital Trial Tracker</text>
+  </g>
+
+  <!-- Payment & Recommender Middle (112, 113) -->
+  <g transform="translate(350, 420)" filter="url(#shadow)">
+    <rect width="220" height="48" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+    <text x="110" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" fill="#047857" text-anchor="middle">112. Payment &amp; Fee Adjustment</text>
+    <text x="110" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" fill="#047857" text-anchor="middle">113. Recommendation Engine</text>
+  </g>
+
+  <!-- Database Right (114) -->
+  <g transform="translate(630, 420)" filter="url(#shadow)">
+    <rect width="220" height="48" rx="6" fill="#FDF2F8" stroke="#DB2777" stroke-width="1"/>
+    <text x="110" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#9D174D" text-anchor="middle">114. Cloud Database</text>
+    <text x="110" y="39" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#9D174D" text-anchor="middle">Users, Real-time Stock &amp; IPR Logs</text>
+  </g>
+</svg>
