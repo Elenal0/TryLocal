@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=5">
   <style>
     /* Specific brochure presentation styling */
     .brochure-hero-wrapper {
@@ -274,8 +274,8 @@
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
           <li><a href="shop.html" class="nav-link" id="nav-shop">Shop</a></li>
-          <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="profile.html" class="nav-link" id="nav-profile">Startup Profile</a></li>
           <li><a href="brochure.html" class="nav-link active" id="nav-brochure">Brochure</a></li>
           <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
@@ -308,21 +308,6 @@
 
       <!-- Main Brochure Showcase Container -->
       <div class="brochure-hero-wrapper">
-        
-        <!-- Action Banner -->
-        <div class="brochure-action-banner">
-          <div style="display:flex; align-items:center; gap:0.6rem;">
-            <span style="font-size:1.25rem;">📑</span>
-            <div>
-              <strong style="color:var(--color-primary); font-size:0.95rem;">TryLocal Brochure (v5)</strong>
-              <div style="font-size:0.75rem; color:var(--text-muted);">SPIT Mumbai MCA Venture • Andheri West, Mumbai</div>
-            </div>
-          </div>
-
-          <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-primary action-download-brochure">
-            <span>📥 Download Official PDF (Google Drive)</span>
-          </a>
-        </div>
 
         <!-- Interactive Layout Directly Visible -->
         <div class="brochure-interactive-grid" id="brochure-main-interactive">
@@ -411,48 +396,18 @@
 
       </div><!-- /brochure-hero-wrapper -->
 
-      <!-- Action Cards Below Brochure -->
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:2rem;">
-        
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:1.8rem; margin-bottom:0.5rem;">📥</div>
-          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Download Official Brochure PDF</h3>
-          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
-            Direct high-definition PDF file stored in Google Drive. Perfect for offline review, printing, or academic submission.
-          </p>
-          <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-primary action-download-brochure" style="width:100%;">
-            <span>📥 Download TryLocal_Brochure_v5.pdf</span>
-          </a>
-        </div>
-
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:1.8rem; margin-bottom:0.5rem;">📋</div>
-          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">View Startup Profile Sheet</h3>
-          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
-            Explore the 2-page academic startup profile document with Abstract, Student Founders, Team Matrix, Revenue Model, and Roadmap.
-          </p>
-          <a href="profile.html" class="btn btn-outline" style="width:100%;">
-            <span>📄 Open Startup Profile Sheet →</span>
-          </a>
-        </div>
-
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:1.8rem; margin-bottom:0.5rem;">🛍️</div>
-          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Experience The Live Shop</h3>
-          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
-            Browse authentic curated fashion items from local Andheri boutiques, book a trial, or add items to your cart.
-          </p>
-          <a href="shop.html" class="btn btn-outline" style="width:100%;">
-            <span>🛍️ Browse Boutique Catalog →</span>
-          </a>
-        </div>
-
+      <!-- Download button after reading -->
+      <div style="text-align:center; margin-top:2.5rem; padding-bottom:1rem;">
+        <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-primary action-download-brochure" style="display:inline-flex; padding:0.9rem 2rem; font-size:1rem;">
+          <span>📥 Download Brochure PDF</span>
+        </a>
       </div>
 
     </div>
   </main>
 
   <!-- Footer -->
+
   <footer class="site-footer" style="margin-top:2rem;">
     <div class="container footer-bottom" style="border:none; padding-top:0;">
       <div>TryLocal Brochure (v5) • SPIT Mumbai MCA Venture</div>
@@ -460,7 +415,7 @@
     </div>
   </footer>
 
-  <script src="js/auth.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/auth.js?v=5"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

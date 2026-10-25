@@ -4719,3 +4719,109 @@ main {
   }
 }
 
+/* ==========================================================================
+   Persistent Floating Go to Cart Button (bottom-right of visible screen)
+   ========================================================================== */
+.floating-cart-pill {
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  z-index: 999999 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  background: linear-gradient(135deg, #BB6C43 0%, #8C4020 100%) !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  padding: 0.85rem 1.35rem !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  box-shadow: 0 12px 32px rgba(187, 108, 67, 0.5), 0 4px 14px rgba(0,0,0,0.3) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+  cursor: pointer !important;
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important;
+  backdrop-filter: blur(10px) !important;
+  font-family: inherit !important;
+}
+.floating-cart-pill:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 16px 40px rgba(187, 108, 67, 0.65), 0 6px 16px rgba(0,0,0,0.35) !important;
+  color: #FFFFFF !important;
+}
+.floating-cart-pill.pulse {
+  animation: floatCartPulse 0.42s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+@keyframes floatCartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@media (max-width: 640px) {
+  .floating-cart-pill {
+    bottom: 20px !important;
+    right: 18px !important;
+    padding: 0.75rem 1.15rem !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+/* ==========================================================================
+   Trial Booking Success Modal Overlay
+   ========================================================================== */
+.trial-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 12, 10, 0.72);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+.trial-success-overlay.visible { opacity: 1; }
+.trial-success-box {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  transform: scale(0.88);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.trial-success-overlay.visible .trial-success-box { transform: scale(1); }
+.trial-success-anim {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+  animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+@keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+.trial-success-title { font-size: 1.85rem; font-weight: 800; color: #1E293B; margin-bottom: 0.4rem; }
+.trial-success-msg { font-size: 0.95rem; color: #475569; margin-bottom: 1.5rem; }
+.trial-success-detail {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.tsd-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; color: #475569; }
+.tsd-row strong { color: #1E293B; font-weight: 700; }
+.trial-success-note {
+  font-size: 0.8rem;
+  color: #64748B;
+  line-height: 1.55;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+

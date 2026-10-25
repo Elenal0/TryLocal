@@ -11,7 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=5">
   <!-- Leaflet CSS for OpenStreetMap -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
@@ -840,7 +840,7 @@
           </p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); max-width:960px; margin:0 auto; gap:2rem;">
           <!-- Card 1: Startup Profile -->
           <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:2rem; display:flex; flex-direction:column; justify-content:space-between; box-shadow:var(--shadow-sm);">
             <div>
@@ -878,20 +878,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Card 3: Video Demo -->
-          <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:2rem; display:flex; flex-direction:column; justify-content:space-between; box-shadow:var(--shadow-sm);">
-            <div>
-              <div style="font-size:2rem; margin-bottom:0.75rem;">🎬</div>
-              <h3 style="font-size:1.35rem; color:var(--color-primary); margin-bottom:0.5rem;">Promotional Pitch Video</h3>
-              <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.5rem;">
-                High-definition embedded video player demonstrating the non-technical pitch concept: "Try clothes at home before buying".
-              </p>
-            </div>
-            <a href="video.html" class="btn btn-secondary" style="width:100%;">
-              <span>Watch Video Pitch →</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -923,7 +909,6 @@
             <li><a href="shop.html">Shop Local Boutique Fits</a></li>
             <li><a href="profile.html">Startup Profile</a></li>
             <li><a href="brochure.html">Official Brochure (v5)</a></li>
-            <li><a href="video.html">Promotional Pitch Video</a></li>
             <li><a href="contact.html">Retailer Onboarding &amp; Contact</a></li>
           </ul>
         </div>
@@ -962,7 +947,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/auth.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/auth.js?v=5"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

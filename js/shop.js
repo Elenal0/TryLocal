@@ -160,11 +160,15 @@ function renderProducts() {
       e.stopPropagation();
       const id = parseInt(btn.dataset.id);
       const product = PRODUCTS.find(p => p.id === id);
-      if (product && !getCart().some(item => item.id === id)) {
-        addToCart({ ...product, selectedSize: product.sizes[0], selectedColor: product.colors[0] });
-        btn.classList.add('in-cart');
-        btn.innerHTML = '✓ Added';
-        showToast(`${product.name} added to trial bag!`);
+      if (product) {
+        if (!getCart().some(item => item.id === id)) {
+          addToCart({ ...product, selectedSize: product.sizes[0], selectedColor: product.colors[0] });
+          btn.classList.add('in-cart');
+          btn.innerHTML = '✓ Added';
+        }
+        if (typeof updateFloatingCartBtn === 'function') {
+          updateFloatingCartBtn(true);
+        }
       }
     });
   });
@@ -376,12 +380,39 @@ function handleCheckout() {
     if (mapSection) mapSection.scrollIntoView({ behavior: 'smooth' });
     return;
   }
-  // Simulate booking
-  showToast('🎉 Trial booked! Your valet will arrive in ~' + store.deliveryTime);
+  // Show success modal
+  showTrialSuccessModal(store);
   setTimeout(() => {
     setCart([]);
     renderCartPage();
-  }, 2000);
+  }, 800);
+}
+
+function showTrialSuccessModal(store) {
+  const old = document.getElementById('trial-success-modal');
+  if (old) old.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'trial-success-modal';
+  modal.className = 'trial-success-overlay';
+  modal.innerHTML = `
+    <div class="trial-success-box">
+      <div class="trial-success-anim">🎉</div>
+      <h2 class="trial-success-title">Trial Booked!</h2>
+      <p class="trial-success-msg">Your home trial is confirmed. Our valet is on the way!</p>
+      <div class="trial-success-detail">
+        <div class="tsd-row"><span>📍 Store</span><strong>${store.name}, ${store.area}</strong></div>
+        <div class="tsd-row"><span>🛵 Arrival</span><strong>~${store.deliveryTime}</strong></div>
+        <div class="tsd-row"><span>✅ Status</span><strong style="color:#22C55E;">Confirmed</strong></div>
+      </div>
+      <p class="trial-success-note">Try what you love. Return the rest — our valet collects on the spot. Trial fee waived if you keep at least 1 item.</p>
+      <button class="btn btn-primary" style="width:100%; margin-top:1.25rem;" onclick="document.getElementById('trial-success-modal').remove(); window.location.href='shop.html'">
+        Continue Shopping →
+      </button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  requestAnimationFrame(() => modal.classList.add('visible'));
 }
 
 // ===== MAP / LOCATION =====

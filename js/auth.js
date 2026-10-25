@@ -123,13 +123,55 @@ function getCartCount() {
   return getCart().reduce((sum, item) => sum + item.qty, 0);
 }
 
-function updateCartBadge() {
+function updateCartBadge(shouldPulse = false) {
   const badges = document.querySelectorAll('.cart-count-badge');
   const count = getCartCount();
   badges.forEach(b => {
     b.textContent = count;
     b.style.display = count > 0 ? 'flex' : 'none';
   });
+  updateFloatingCartBtn(shouldPulse);
+}
+
+function updateFloatingCartBtn(shouldPulse = false) {
+  // If we are currently on cart.html, do not show the floating go to cart button
+  const isCartPage = window.location.pathname.toLowerCase().endsWith('cart.html');
+  if (isCartPage) {
+    const existing = document.getElementById('floating-cart-btn');
+    if (existing) existing.remove();
+    return;
+  }
+
+  const count = getCartCount();
+  let btn = document.getElementById('floating-cart-btn');
+
+  if (count <= 0) {
+    if (btn) btn.remove();
+    return;
+  }
+
+  if (!btn) {
+    btn = document.createElement('a');
+    btn.id = 'floating-cart-btn';
+    btn.className = 'floating-cart-pill';
+    btn.href = 'cart.html';
+    btn.title = 'View your Trial Bag';
+    btn.setAttribute('style', 'position:fixed !important; bottom:28px !important; right:28px !important; z-index:999999 !important; display:inline-flex !important; align-items:center !important; gap:0.65rem !important; background:linear-gradient(135deg, #BB6C43 0%, #8C4020 100%) !important; color:#FFFFFF !important; text-decoration:none !important; padding:0.85rem 1.35rem !important; border-radius:9999px !important; font-weight:700 !important; font-size:0.95rem !important; box-shadow:0 12px 32px rgba(187, 108, 67, 0.5), 0 4px 14px rgba(0,0,0,0.3) !important; border:1.5px solid rgba(255,255,255,0.28) !important; cursor:pointer !important; transition:transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important; backdrop-filter:blur(10px) !important; font-family:inherit !important;');
+    document.body.appendChild(btn);
+  }
+
+  btn.innerHTML = `
+    <span style="font-size:1.25rem; line-height:1;">🛍️</span>
+    <span style="letter-spacing:0.2px;">Go to Cart</span>
+    <span style="background:#FFFFFF; color:#8C4020; font-size:0.8rem; font-weight:800; padding:0.18rem 0.58rem; border-radius:9999px; min-width:22px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.2);">${count}</span>
+    <span style="font-size:1.05rem; line-height:1;">→</span>
+  `;
+
+  if (shouldPulse) {
+    btn.classList.remove('pulse');
+    void btn.offsetWidth;
+    btn.classList.add('pulse');
+  }
 }
 
 // Location helpers
@@ -505,6 +547,7 @@ window.openLocationModal = openLocationModal;
 document.addEventListener('DOMContentLoaded', () => {
   seedUsers();
   updateHeaderAuth();
+  updateFloatingCartBtn();
 
   // Attach to top bar location click
   document.querySelectorAll('#topbar-location-btn, .location-picker-btn').forEach(btn => {
