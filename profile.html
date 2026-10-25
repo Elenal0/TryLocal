@@ -23,7 +23,10 @@
         <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
-        <span>📍 Andheri West, Mumbai</span>
+        <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
+          <span>📍</span> <span class="current-location-text">Andheri West, Mumbai</span>
+          <span style="text-decoration:underline; font-size:0.72rem; opacity:0.85;">(Change)</span>
+        </button>
       </div>
     </div>
   </div>
@@ -38,9 +41,9 @@
       <nav>
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
           <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
-          <li><a href="index.html#simulator" class="nav-link" id="nav-demo">Try-at-Home Demo</a></li>
           <li><a href="profile.html" class="nav-link active" id="nav-profile">Story &amp; Profile</a></li>
           <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
           <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
@@ -48,8 +51,9 @@
       </nav>
 
       <div class="nav-cta-group">
+        <div id="header-auth-area"></div>
         <button class="btn btn-sm btn-primary action-download-profile" id="btn-print-profile">
-          <span>🖨️ Print Profile (PDF)</span>
+          <span>🖨️ PDF</span>
         </button>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <span></span>
@@ -458,6 +462,7 @@
     </div>
   </footer>
 
+  <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

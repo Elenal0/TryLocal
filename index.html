@@ -12,6 +12,8 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Leaflet CSS for OpenStreetMap -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -24,7 +26,10 @@
         <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
       </div>
       <div class="top-bar-meta">
-        <span>📍 Andheri West, Mumbai</span>
+        <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
+          <span>📍</span> <span class="current-location-text" id="current-location-text">Andheri West, Mumbai</span>
+          <span style="text-decoration:underline; font-size:0.72rem; opacity:0.85;">(Change)</span>
+        </button>
       </div>
     </div>
   </div>
@@ -41,20 +46,18 @@
       <nav>
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
           <li><a href="#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
           <li><a href="#experience" class="nav-link" id="nav-experience">Experience</a></li>
-          <li><a href="#simulator" class="nav-link" id="nav-demo">Try-at-Home Demo</a></li>
           <li><a href="profile.html" class="nav-link" id="nav-profile">Story &amp; Profile</a></li>
           <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
           <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- CTA Group -->
+      <!-- CTA Group (Auth Area & Mobile Toggle) -->
       <div class="nav-cta-group">
-        <a href="#simulator" class="btn btn-sm btn-primary" id="nav-cta-trial-btn">
-          <span>⚡ Book a Trial</span>
-        </a>
+        <div id="header-auth-area"></div>
         <!-- Mobile Toggle Button -->
         <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
           <span></span>
@@ -91,8 +94,8 @@
           </p>
 
           <div class="hero-cta-row">
-            <a href="#simulator" class="btn btn-lg btn-primary" id="hero-btn-simulator">
-              <span>⚡ Try the Live Demo</span>
+            <a href="shop.html" class="btn btn-lg btn-primary" id="hero-btn-shop">
+              <span>🛍️ Browse Shop &amp; Try at Home</span>
             </a>
             <a href="#experience" class="btn btn-lg btn-outline" id="hero-btn-experience">
               <span>✨ Explore the Experience</span>
@@ -554,83 +557,111 @@
       </div>
     </section>
 
-    <!-- Interactive Try-At-Home Simulator Section -->
-    <section class="section-py" id="simulator" style="background:#F1F5F9;">
+    <!-- Trending Boutique Outfits Showcase (Replaced Simulator with Real E-Commerce Showcase) -->
+    <section class="section-py" id="featured-shop" style="background:#FAF8F5; padding: 4.5rem 0;">
       <div class="container">
-        <div class="section-header">
-          <span class="badge badge-blue section-tag">Interactive Demo</span>
-          <h2 class="section-title">Test the TryLocal Trial Simulator</h2>
-          <p class="section-subtitle">
-            Experience firsthand how customers pick clothes from Andheri West stores, book a trial slot, evaluate items at home, and see the trial fee automatically waive upon keeping an outfit!
+        <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
+          <span class="badge badge-amber section-tag">Trending in Andheri &amp; Bandra</span>
+          <h2 class="section-title">Popular Outfits Ready for Home Trial</h2>
+          <p class="section-subtitle" style="max-width:620px; margin:0 auto; color:#6B5A52;">
+            Curated pieces from Mumbai's finest local boutiques. Pick up to 5 outfits, get them in 45 minutes, and try them on in private for 30 minutes in your bedroom mirror!
           </p>
         </div>
 
-        <div class="simulator-container">
-          <div class="simulator-header">
-            <h3><span>🛍️</span> TryLocal Home-Trial Interactive Engine</h3>
-            <span class="badge badge-green" style="background:rgba(255,255,255,0.2); color:#FFFFFF; border:none;">
-              Live Simulation Mode
-            </span>
-          </div>
-
-          <div class="sim-body-grid">
-            <!-- Left Picker Column -->
-            <div class="sim-picker-col">
-              <div style="display:flex; justify-content:space-between; align-items:center;">
-                <h4 style="font-size:1.1rem; color:var(--color-primary);">1. Select Outfits from Nearby Stores</h4>
-                <span style="font-size:0.8rem; color:var(--text-muted);">Max 4 items per trial batch</span>
-              </div>
-              <div class="sim-clothes-grid" id="sim-clothes-grid">
-                <!-- Populated dynamically via main.js -->
-              </div>
-              <div style="background:#EFF6FF; border-radius:var(--radius-sm); padding:0.75rem 1rem; font-size:0.825rem; color:#1E40AF; display:flex; align-items:center; gap:0.5rem;">
-                <span>📍</span>
-                <span>Location: Grace Pinnacle, 1105, Andheri West • Estimated Delivery: 35 Minutes</span>
-              </div>
+        <div class="shop-products-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1.5rem; margin-bottom:2.5rem;">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop" alt="Textured Sage Linen Shirt" class="product-img" loading="lazy">
+              <span class="product-badge">Bestseller</span>
             </div>
-
-            <!-- Right Summary & Decision Column -->
-            <div class="sim-summary-col">
-              <div>
-                <h4 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.25rem;">2. Trial Bag &amp; Doorstep Decision</h4>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">
-                  Simulate trying items at home. Click "Keep" or "Return" for each piece:
-                </p>
-
-                <ul class="sim-order-list" id="sim-order-list">
-                  <!-- Populated dynamically via main.js -->
-                </ul>
+            <div class="product-body">
+              <div class="product-store">🏪 Vogue Studio · Andheri West</div>
+              <h3 class="product-title">Textured Sage Linen Shirt</h3>
+              <div class="product-meta-row">
+                <div class="product-price-box">
+                  <span class="product-price">₹1,450</span>
+                  <span class="product-original-price">₹1,899</span>
+                </div>
+                <div class="product-rating">⭐ 4.5 (128)</div>
               </div>
-
-              <!-- Calculation Breakdown -->
-              <div class="sim-calc-box">
-                <div class="sim-calc-row">
-                  <span>Kept Items Subtotal:</span>
-                  <strong id="sim-subtotal" style="color:var(--color-primary);">₹0</strong>
-                </div>
-                <div class="sim-calc-row">
-                  <span>Home Trial Fee:</span>
-                  <span id="sim-trial-fee">₹200</span>
-                </div>
-                <div class="sim-calc-row">
-                  <span>Trial Fee Adjustment:</span>
-                  <strong id="sim-fee-discount" style="color:#059669;">- ₹200 (Waived)</strong>
-                </div>
-                <div class="sim-calc-row" style="font-size:0.78rem; opacity:0.85;">
-                  <span>Platform Commission (15%):</span>
-                  <span id="sim-commission">₹0</span>
-                </div>
-                <div class="sim-calc-total sim-calc-row">
-                  <span>Total Payable on Doorstep:</span>
-                  <span id="sim-grand-total" style="color:var(--color-accent-dark);">₹0</span>
-                </div>
-
-                <div style="margin-top:1rem; font-size:0.75rem; color:#64748B; line-height:1.4;">
-                  💡 <em>Business Model Rule: If at least 1 item is kept, the ₹200 home-trial fee is fully waived. Unkept items are handed right back to the courier!</em>
-                </div>
-              </div>
+              <a href="shop.html" class="btn btn-sm btn-primary" style="width:100%; margin-top:0.75rem;">
+                <span>🛍️ Add to Trial Bag</span>
+              </a>
             </div>
           </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=500&fit=crop" alt="Floral Cotton Summer Dress" class="product-img" loading="lazy">
+              <span class="product-badge">Trending</span>
+            </div>
+            <div class="product-body">
+              <div class="product-store">🏪 Grace Apparel Hub · Andheri West</div>
+              <h3 class="product-title">Floral Cotton Summer Dress</h3>
+              <div class="product-meta-row">
+                <div class="product-price-box">
+                  <span class="product-price">₹1,650</span>
+                  <span class="product-original-price">₹2,199</span>
+                </div>
+                <div class="product-rating">⭐ 4.8 (312)</div>
+              </div>
+              <a href="shop.html" class="btn btn-sm btn-primary" style="width:100%; margin-top:0.75rem;">
+                <span>🛍️ Add to Trial Bag</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop" alt="Olive Tailored Blazer" class="product-img" loading="lazy">
+              <span class="product-badge">Premium</span>
+            </div>
+            <div class="product-body">
+              <div class="product-store">🏪 Colaba Stitch Co. · Andheri West</div>
+              <h3 class="product-title">Olive Tailored Blazer</h3>
+              <div class="product-meta-row">
+                <div class="product-price-box">
+                  <span class="product-price">₹2,890</span>
+                  <span class="product-original-price">₹3,499</span>
+                </div>
+                <div class="product-rating">⭐ 4.7 (89)</div>
+              </div>
+              <a href="shop.html" class="btn btn-sm btn-primary" style="width:100%; margin-top:0.75rem;">
+                <span>🛍️ Add to Trial Bag</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop" alt="Silk Anarkali Kurta Set" class="product-img" loading="lazy">
+              <span class="product-badge">Popular</span>
+            </div>
+            <div class="product-body">
+              <div class="product-store">🏪 Grace Apparel Hub · Andheri West</div>
+              <h3 class="product-title">Silk Anarkali Kurta Set</h3>
+              <div class="product-meta-row">
+                <div class="product-price-box">
+                  <span class="product-price">₹3,200</span>
+                  <span class="product-original-price">₹4,500</span>
+                </div>
+                <div class="product-rating">⭐ 4.9 (201)</div>
+              </div>
+              <a href="shop.html" class="btn btn-sm btn-primary" style="width:100%; margin-top:0.75rem;">
+                <span>🛍️ Add to Trial Bag</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;">
+          <a href="shop.html" class="btn btn-lg btn-primary" style="padding:0.9rem 2.25rem;">
+            <span>🛍️ Explore All 18+ Outfits in Shop →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -884,6 +915,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

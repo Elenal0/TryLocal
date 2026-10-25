@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | TryLocal — Your Favourite Fits, Tried at Home</title>
+  <meta name="description" content="Sign in or create your TryLocal account to browse local boutiques, book home trials, and shop curated fashion.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+        <span class="top-bar-badge">Live in Mumbai</span>
+        <span>⚡ 30-Min In-Home Fashion Trials in Andheri West, Bandra &amp; Juhu</span>
+      </div>
+      <div class="top-bar-meta">
+        <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
+          <span>📍</span> <span class="current-location-text">Andheri West, Mumbai</span>
+          <span style="text-decoration:underline; font-size:0.72rem; opacity:0.85;">(Change)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-link" id="brand-logo-link">
+        <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="primary-nav">
+          <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
+          <li><a href="profile.html" class="nav-link" id="nav-profile">Story & Profile</a></li>
+          <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta-group">
+        <div id="header-auth-area"></div>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="login-section">
+      <div class="login-container">
+        <!-- Left Visual Panel -->
+        <div class="login-visual-panel">
+          <div class="login-visual-content">
+            <div class="login-visual-icon">🛍️</div>
+            <h2>Welcome to TryLocal</h2>
+            <p>Mumbai's #1 hyperlocal fashion platform. Browse boutiques, book home trials, and try before you buy.</p>
+            <div class="login-visual-features">
+              <div class="login-feature">
+                <span>✓</span> 30-Minute In-Home Fitting
+              </div>
+              <div class="login-feature">
+                <span>✓</span> Zero Return Hassles
+              </div>
+              <div class="login-feature">
+                <span>✓</span> 6+ Local Boutiques
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Panel -->
+        <div class="login-form-panel">
+          <!-- Tab switcher -->
+          <div class="auth-tabs" id="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Login</button>
+            <button class="auth-tab" data-tab="register">Register</button>
+          </div>
+
+          <!-- Login Form -->
+          <form class="auth-form" id="login-form">
+            <h2 class="auth-form-title">Welcome back! 👋</h2>
+            <p class="auth-form-subtitle">Sign in to your account to continue shopping</p>
+
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="login-email" placeholder="you@example.com" required value="demo@trylocal.in">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">🔒</span>
+                <input type="password" id="login-password" placeholder="Enter password" required value="demo123">
+              </div>
+            </div>
+
+            <div id="login-error" class="auth-error" style="display:none;"></div>
+
+            <button type="submit" class="btn btn-lg btn-primary auth-submit-btn" id="login-submit-btn">
+              <span>Sign In →</span>
+            </button>
+
+            <div class="auth-demo-hint">
+              <strong>Demo credentials:</strong><br>
+              Email: <code>demo@trylocal.in</code> · Password: <code>demo123</code>
+            </div>
+          </form>
+
+          <!-- Register Form -->
+          <form class="auth-form" id="register-form" style="display:none;">
+            <h2 class="auth-form-title">Create Account 🎉</h2>
+            <p class="auth-form-subtitle">Join TryLocal and start trying fashion at home</p>
+
+            <div class="form-group">
+              <label for="reg-name">Full Name</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">👤</span>
+                <input type="text" id="reg-name" placeholder="Your full name" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-email">Email Address</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="reg-email" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-phone">Phone Number</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">📱</span>
+                <input type="tel" id="reg-phone" placeholder="+91 XXXXXXXXXX" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-password">Create Password</label>
+              <div class="input-icon-wrap">
+                <span class="input-icon">🔒</span>
+                <input type="password" id="reg-password" placeholder="Min 6 characters" required minlength="6">
+              </div>
+            </div>
+
+            <div id="register-error" class="auth-error" style="display:none;"></div>
+
+            <button type="submit" class="btn btn-lg btn-primary auth-submit-btn" id="register-submit-btn">
+              <span>Create Account →</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top:0;">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 TryLocal Team • SPIT Mumbai MCA Practical</div>
+        <div>Designed for Entrepreneurship, Innovation and Patent Research (EIPR)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If already logged in, redirect
+      const user = getCurrentUser();
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get('redirect') || 'shop.html';
+      if (user) {
+        window.location.href = redirect;
+        return;
+      }
+
+      // Tab switching
+      const tabs = document.querySelectorAll('.auth-tab');
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          if (tab.dataset.tab === 'login') {
+            loginForm.style.display = 'flex';
+            registerForm.style.display = 'none';
+          } else {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'flex';
+          }
+        });
+      });
+
+      // Login handler
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const result = login(email, password);
+        const errorEl = document.getElementById('login-error');
+
+        if (result.success) {
+          window.location.href = redirect;
+        } else {
+          errorEl.textContent = result.message;
+          errorEl.style.display = 'block';
+          errorEl.classList.add('shake');
+          setTimeout(() => errorEl.classList.remove('shake'), 500);
+        }
+      });
+
+      // Register handler
+      registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value;
+        const email = document.getElementById('reg-email').value;
+        const phone = document.getElementById('reg-phone').value;
+        const password = document.getElementById('reg-password').value;
+        const result = register(name, email, password, phone);
+        const errorEl = document.getElementById('register-error');
+
+        if (result.success) {
+          window.location.href = redirect;
+        } else {
+          errorEl.textContent = result.message;
+          errorEl.style.display = 'block';
+          errorEl.classList.add('shake');
+          setTimeout(() => errorEl.classList.remove('shake'), 500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial Bag | TryLocal — Your Home Trial Cart</title>
+  <meta name="description" content="Review your trial bag, select a nearby store, and book your in-home fitting. Our valet delivers in 30 minutes.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Leaflet CSS for OpenStreetMap -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+        <span class="top-bar-badge">Live in Mumbai</span>
+        <span>⚡ 30-Min In-Home Fashion Trials in Andheri West, Bandra &amp; Juhu</span>
+      </div>
+      <div class="top-bar-meta">
+        <button class="top-bar-loc-btn location-picker-btn" id="topbar-location-btn" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#FFFFFF; font-family:inherit; font-size:0.78rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem; padding:0.25rem 0.65rem; border-radius:9999px; transition:all 0.2s;" title="Click to choose delivery location & store in Mumbai">
+          <span>📍</span> <span class="current-location-text">Andheri West, Mumbai</span>
+          <span style="text-decoration:underline; font-size:0.72rem; opacity:0.85;">(Change)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-link" id="brand-logo-link">
+        <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="primary-nav">
+          <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="shop.html" class="nav-link" id="nav-shop">🛍️ Shop</a></li>
+          <li><a href="profile.html" class="nav-link" id="nav-profile">Story & Profile</a></li>
+          <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta-group">
+        <div id="header-auth-area"></div>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cart Hero -->
+    <section class="cart-hero">
+      <div class="container">
+        <span class="badge badge-amber section-tag">🛒 Trial Bag</span>
+        <h1 class="cart-hero-title">Your Trial Bag</h1>
+        <p class="cart-hero-subtitle">Review your selected pieces, choose a nearby store, and book your in-home trial.</p>
+      </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-main-section">
+      <div class="container">
+        <div class="cart-layout">
+          <!-- Cart Items Column -->
+          <div class="cart-items-column">
+            <!-- Empty State -->
+            <div class="cart-empty-state" id="cart-empty-state" style="display:none;">
+              <div class="empty-icon">🛒</div>
+              <h3>Your trial bag is empty</h3>
+              <p>Add some pieces from the shop to get started!</p>
+              <a href="shop.html" class="btn btn-primary">
+                <span>🛍️ Browse Shop</span>
+              </a>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="cart-items-list" id="cart-items-list">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="cart-summary-column">
+            <div class="cart-summary-card" id="cart-summary">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="cart-map-section" id="cart-map-section">
+          <div class="map-section-header">
+            <h2 class="map-section-title">📍 Select a Nearby Store</h2>
+            <p class="map-section-desc">Choose the boutique you'd like your trial items delivered from. All stores are within the Andheri area.</p>
+          </div>
+
+          <div class="map-controls-row">
+            <div class="store-dropdown-wrap">
+              <label for="store-dropdown">Pick a store:</label>
+              <select id="store-dropdown" class="store-dropdown">
+                <option value="">Choose a nearby store...</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="map-container-wrap">
+            <div id="store-map" class="store-map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 TryLocal Team • SPIT Mumbai MCA Practical</div>
+        <div>Designed for Entrepreneurship, Innovation and Patent Research (EIPR)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for OpenStreetMap -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/auth.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
