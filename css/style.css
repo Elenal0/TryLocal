@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .floating-pill-right {
-  bottom: 40px;
+  bottom: 210px; /* Positioned on the photo, safely above the white overlay card so return fee and delivery metrics are 100% visible */
   right: -24px;
   animation: floatSlow 4s ease-in-out infinite alternate 2s;
 }
@@ -1938,10 +1938,36 @@ h1, h2, h3, h4, h5, h6 {
    Footer
    ========================================================================== */
 .site-footer {
-  background: #071527;
+  position: relative;
+  background: #060B12;
   color: #94A3B8;
   padding: 4.5rem 0 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Faded boutique atmosphere background */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 80% 25%, rgba(187, 108, 67, 0.22) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(6, 11, 18, 0.90) 0%, rgba(6, 11, 18, 0.82) 40%, rgba(6, 11, 18, 0.95) 100%),
+    url('../assets/trylocal_mumbai_boutique.jpg');
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.38;
+  filter: saturate(125%) contrast(115%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-footer .container,
+.site-footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
@@ -1956,6 +1982,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
   margin-bottom: 1.25rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .footer-links {
@@ -1966,13 +1994,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
 }
 
+.footer-links a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
 .footer-links a:hover {
-  color: #34D399;
+  color: #38BDF8;
   padding-left: 4px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;
@@ -1980,17 +2014,21 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.8125rem;
+  color: #94A3B8;
 }
 
 .academic-disclaimer-box {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
-  padding: 0.85rem 1.25rem;
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: #94A3B8;
+  padding: 0.95rem 1.35rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #E2E8F0;
   margin-bottom: 2rem;
+}
 /* ==========================================================================
    Smooth Page Transitions & Animations
    ========================================================================== */
@@ -2321,6 +2359,14 @@ main {
   }
   .hero-title {
     font-size: 2.2rem;
+  }
+  .floating-pill-left {
+    left: 8px;
+    top: 12px;
+  }
+  .floating-pill-right {
+    right: 8px;
+    bottom: 120px;
   }
   .experience-gallery-grid {
     grid-template-columns: 1fr;
