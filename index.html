@@ -168,135 +168,119 @@
       </div>
     </section>
 
-    <!-- Visual Real-Life Product Experience Showcase -->
+    <!-- Video Section -->
     <section class="section-py" id="experience" style="background:#FFFFFF;">
       <div class="container">
-        <div class="section-header">
-          <span class="badge badge-green section-tag">The Experience</span>
-          <h2 class="section-title">How TryLocal Changes Your Shopping Routine</h2>
-          <p class="section-subtitle">
-            Say goodbye to fitting room queues, Mumbai traffic jams, and painful 7-day courier return processes.
-          </p>
+        <div class="section-header" style="margin-bottom:2.5rem;">
+          <span class="badge badge-amber section-tag">See It In Action</span>
+          <h2 class="section-title">What TryLocal Feels Like</h2>
+          <p class="section-subtitle">Real clothes. Your mirror. Zero guesswork.</p>
         </div>
 
-        <div class="experience-gallery-grid">
-          <!-- Card 1: Boutique -->
-          <div class="gallery-card">
-            <div class="gallery-thumb-wrap">
-              <img src="assets/trylocal_mumbai_boutique.jpg" alt="Curated Mumbai Boutiques" loading="lazy">
-              <span class="gallery-tag-pill">1. Discover</span>
-            </div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">Local Boutiques Online</h3>
-              <p class="gallery-desc">
-                Browse verified, curated collections from nearby high-street designers in Bandra, Lokhandwala, and Colaba.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2: Doorstep Delivery -->
-          <div class="gallery-card">
-            <div class="gallery-thumb-wrap">
-              <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep Delivery Handover" loading="lazy">
-              <span class="gallery-tag-pill">2. Fast Drop</span>
-            </div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">Doorstep Valet Handover</h3>
-              <p class="gallery-desc">
-                Your sanitized trial garments arrive in an eco-friendly tote within 45 minutes, right at your building lobby or doorstep.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3: In-Home Trial -->
-          <div class="gallery-card">
-            <div class="gallery-thumb-wrap">
-              <img src="assets/trylocal_fitting_mirror.jpg" alt="Private Home Fitting Trial" loading="lazy">
-              <span class="gallery-tag-pill">3. Fitting Room</span>
-            </div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">30-Min Mirror Fitting</h3>
-              <p class="gallery-desc">
-                Try clothes in natural daylight with your own heels, jeans, and lighting. Feel the fabric and test real comfort without rushing.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4: Unboxing & Decision -->
-          <div class="gallery-card">
-            <div class="gallery-thumb-wrap">
-              <img src="assets/trylocal_unboxing_kit.jpg" alt="Curated Trial Unboxing Kit" loading="lazy">
-              <span class="gallery-tag-pill">4. Keep &amp; Return</span>
-            </div>
-            <div class="gallery-content">
-              <h3 class="gallery-title">Instant On-Spot Return</h3>
-              <p class="gallery-desc">
-                Keep the pieces you love, hand the rest straight back to the waiting valet. No packing boxes, printing labels, or waiting for refunds!
-              </p>
-            </div>
+        <div class="video-embed-wrapper" id="video-embed-wrapper">
+          <!-- Replace the src with your YouTube embed or MP4 URL -->
+          <iframe
+            id="trylocal-video-iframe"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0&modestbranding=1"
+            title="TryLocal — Try clothes at home in Mumbai"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border:none;"
+          ></iframe>
+          <!-- Video overlay play button shown until user clicks -->
+          <div class="video-overlay" id="video-overlay">
+            <img src="assets/trylocal_fitting_mirror.jpg" alt="TryLocal preview" class="video-thumb">
+            <button class="video-play-btn" id="video-play-btn" aria-label="Play video">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                <circle cx="40" cy="40" r="40" fill="rgba(187,108,67,0.92)"/>
+                <polygon points="32,24 60,40 32,56" fill="#FFFFFF"/>
+              </svg>
+            </button>
+            <div class="video-overlay-label">Watch the TryLocal Experience</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How TryLocal Works (4 Consumer Steps) -->
-    <section class="section-py workflow-section" id="how-it-works">
+    <!-- How It Works — Horizontal Carousel -->
+    <section class="hiw-section" id="how-it-works">
       <div class="container">
-        <div class="section-header">
-          <span class="badge badge-blue section-tag">Seamless Journey</span>
-          <h2 class="section-title">Try Clothes at Home in 4 Simple Steps</h2>
-          <p class="section-subtitle">
-            Everything designed around your convenience, comfort, and confidence.
-          </p>
+        <div class="section-header" style="margin-bottom:2rem;">
+          <span class="badge badge-amber section-tag">The Journey</span>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Four simple steps, zero stress.</p>
         </div>
+      </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-bottom:2.5rem;">
-          <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm); position:relative; overflow:hidden;">
-            <div style="font-size:2.5rem; font-weight:800; color:rgba(16, 185, 129, 0.2); position:absolute; top:10px; right:15px;">01</div>
-            <div style="width:48px; height:48px; border-radius:12px; background:#ECFDF5; color:#10B981; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1rem;">📍</div>
-            <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--color-primary);">Select Outfits</h3>
-            <p style="font-size:0.9rem; color:#64748B; line-height:1.5;">Pick 3 to 5 outfits or adjacent sizes from nearby Mumbai boutiques within a 3–5 km radius.</p>
-          </div>
+      <!-- Carousel -->
+      <div class="hiw-carousel-wrap">
+        <button class="hiw-ctrl hiw-ctrl-prev" id="hiw-prev" aria-label="Previous step">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
 
-          <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm); position:relative; overflow:hidden;">
-            <div style="font-size:2.5rem; font-weight:800; color:rgba(16, 185, 129, 0.2); position:absolute; top:10px; right:15px;">02</div>
-            <div style="width:48px; height:48px; border-radius:12px; background:#EFF6FF; color:#3B82F6; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1rem;">🛵</div>
-            <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--color-primary);">45-Min Express Drop</h3>
-            <p style="font-size:0.9rem; color:#64748B; line-height:1.5;">A courteous TryLocal delivery partner brings the sanitized trial box right to your doorstep.</p>
-          </div>
+        <div class="hiw-track" id="hiw-track">
 
-          <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm); position:relative; overflow:hidden;">
-            <div style="font-size:2.5rem; font-weight:800; color:rgba(16, 185, 129, 0.2); position:absolute; top:10px; right:15px;">03</div>
-            <div style="width:48px; height:48px; border-radius:12px; background:#FEF3C7; color:#F59E0B; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1rem;">🪞</div>
-            <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--color-primary);">30-Min Mirror Trial</h3>
-            <p style="font-size:0.9rem; color:#64748B; line-height:1.5;">Try clothes in your bedroom with your own shoes and accessories. Check the real fit and look in complete privacy.</p>
-          </div>
-
-          <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow-sm); position:relative; overflow:hidden;">
-            <div style="font-size:2.5rem; font-weight:800; color:rgba(16, 185, 129, 0.2); position:absolute; top:10px; right:15px;">04</div>
-            <div style="width:48px; height:48px; border-radius:12px; background:#F5F3FF; color:#8B5CF6; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1rem;">💳</div>
-            <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--color-primary);">Keep What Fits</h3>
-            <p style="font-size:0.9rem; color:#64748B; line-height:1.5;">Pay only for the items you decide to keep. Hand unkept items straight back to the runner. ₹0 return hassle!</p>
-          </div>
-        </div>
-
-        <!-- Decision Banner -->
-        <div class="workflow-decision-banner">
-          <div class="decision-info-left">
-            <h4>Every item gets its own keep-or-return decision</h4>
-            <p>
-              Unlike legacy courier returns that take 5-7 days and require printed return labels, TryLocal lets you keep 1 item and return the other 2 on the spot. The delivery runner takes back rejected items immediately!
-            </p>
-          </div>
-          <div class="decision-pills">
-            <div class="decision-badge-keep">
-              <span>✓ Keep: Bill Kept Items</span>
+          <div class="hiw-slide" id="hiws-1">
+            <div class="hiw-slide-img">
+              <img src="assets/trylocal_mumbai_boutique.jpg" alt="Browse boutiques">
+              <span class="hiw-num">01</span>
             </div>
-            <div class="decision-badge-return">
-              <span>✕ Return: Collect On Spot</span>
+            <div class="hiw-slide-body">
+              <div class="hiw-slide-icon">📍</div>
+              <h3 class="hiw-slide-title">Browse &amp; Select</h3>
+              <p class="hiw-slide-text">Pick 3–5 outfits from curated local Mumbai boutiques within minutes.</p>
             </div>
           </div>
-        </div>
+
+          <div class="hiw-slide" id="hiws-2">
+            <div class="hiw-slide-img">
+              <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep delivery">
+              <span class="hiw-num" style="background:#C8906D;">02</span>
+            </div>
+            <div class="hiw-slide-body">
+              <div class="hiw-slide-icon">🛵</div>
+              <h3 class="hiw-slide-title">45-Min Doorstep Drop</h3>
+              <p class="hiw-slide-text">A TryLocal valet brings your sanitised garment bag straight to your door.</p>
+            </div>
+          </div>
+
+          <div class="hiw-slide" id="hiws-3">
+            <div class="hiw-slide-img">
+              <img src="assets/trylocal_fitting_mirror.jpg" alt="Mirror fitting">
+              <span class="hiw-num" style="background:#CCB499; color:#4A413C;">03</span>
+            </div>
+            <div class="hiw-slide-body">
+              <div class="hiw-slide-icon">🪞</div>
+              <h3 class="hiw-slide-title">Try in Your Mirror</h3>
+              <p class="hiw-slide-text">30 minutes in the privacy of your own bedroom. Real light, real feel.</p>
+            </div>
+          </div>
+
+          <div class="hiw-slide" id="hiws-4">
+            <div class="hiw-slide-img">
+              <img src="assets/trylocal_unboxing_kit.jpg" alt="Keep what fits">
+              <span class="hiw-num" style="background:#4A413C;">04</span>
+            </div>
+            <div class="hiw-slide-body">
+              <div class="hiw-slide-icon">💳</div>
+              <h3 class="hiw-slide-title">Keep What You Love</h3>
+              <p class="hiw-slide-text">Pay only for keepers. Hand back the rest instantly — no packaging, no wait.</p>
+            </div>
+          </div>
+
+        </div><!-- /hiw-track -->
+
+        <button class="hiw-ctrl hiw-ctrl-next" id="hiw-next" aria-label="Next step">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="hiw-dots" id="hiw-dots">
+        <button class="hiw-dot is-active" data-idx="0" aria-label="Step 1"></button>
+        <button class="hiw-dot" data-idx="1" aria-label="Step 2"></button>
+        <button class="hiw-dot" data-idx="2" aria-label="Step 3"></button>
+        <button class="hiw-dot" data-idx="3" aria-label="Step 4"></button>
       </div>
     </section>
 
@@ -381,80 +365,6 @@
       </div>
     </section>
 
-    <!-- Experience Comparison (Online vs TryLocal) -->
-    <section class="section-py" style="background:#FFFFFF;">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-green section-tag">Value Comparison</span>
-          <h2 class="section-title">Online Shopping Today vs. With TryLocal</h2>
-          <p class="section-subtitle">
-            How TryLocal solves the critical customer pain points documented in Experiment 8: Business Plan.
-          </p>
-        </div>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
-          <!-- Legacy Card -->
-          <div style="background:#FEF2F2; border:1px solid #FECACA; border-radius:var(--radius-lg); padding:2.25rem;">
-            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
-              <span style="font-size:1.75rem;">📦</span>
-              <div>
-                <h3 style="color:#991B1B; font-size:1.35rem;">Online Shopping Today</h3>
-                <span style="font-size:0.8rem; color:#B91C1C;">E-commerce Giants &amp; Fast Fashion Sites</span>
-              </div>
-            </div>
-
-            <ul style="list-style:none; display:flex; flex-direction:column; gap:1.15rem; font-size:0.925rem; color:#7F1D1D;">
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#DC2626; font-weight:bold;">✕</span>
-                <span><strong>No Pre-Purchase Fit Check:</strong> Shoppers must pay full retail upfront before knowing if shoulder or waist measurements fit.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#DC2626; font-weight:bold;">✕</span>
-                <span><strong>Color &amp; Fabric Mismatch:</strong> Studio lighting and saturation tricks lead to disappointment when package arrives days later.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#DC2626; font-weight:bold;">✕</span>
-                <span><strong>Tedious Multi-Day Returns:</strong> Packing boxes, scheduling courier pick-ups, and waiting 7–10 banking days for refund reversal.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#DC2626; font-weight:bold;">✕</span>
-                <span><strong>Local Boutiques Excluded:</strong> Nearby Mumbai stores are completely invisible on massive national portals.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- TryLocal Card -->
-          <div style="background:#ECFDF5; border:1.5px solid #10B981; border-radius:var(--radius-lg); padding:2.25rem; box-shadow:var(--shadow-md);">
-            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
-              <span style="font-size:1.75rem;">✨</span>
-              <div>
-                <h3 style="color:#065F46; font-size:1.35rem;">With TryLocal</h3>
-                <span style="font-size:0.8rem; color:#047857; font-weight:600;">Hyperlocal Home-Trial Experience</span>
-              </div>
-            </div>
-
-            <ul style="list-style:none; display:flex; flex-direction:column; gap:1.15rem; font-size:0.925rem; color:#064E3B;">
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#10B981; font-weight:bold;">✓</span>
-                <span><strong>Try Clothes at Home First:</strong> Zero financial risk. Try 3–5 items on your own body before spending your money.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#10B981; font-weight:bold;">✓</span>
-                <span><strong>Real Item in Your Own Light:</strong> Check authentic texture, stretch, and color in your real home bedroom mirror.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#10B981; font-weight:bold;">✓</span>
-                <span><strong>Instant Spot Decision &amp; Return:</strong> Keep only the pieces you love. The delivery runner takes the rest back immediately.</span>
-              </li>
-              <li style="display:flex; gap:0.75rem; align-items:flex-start;">
-                <span style="color:#10B981; font-weight:bold;">✓</span>
-                <span><strong>Discover Local Mumbai Boutiques:</strong> Support favorite local retailers across Andheri, Bandra, and Juhu with instant 45-min delivery.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Detailed Founding Team Section -->
     <section class="section-py" id="team" style="background:#F8FAFC;">
@@ -471,7 +381,7 @@
           <!-- Member 1: Meet Gangwal (CEO) -->
           <div class="team-card" id="team-card-meet">
             <div class="team-avatar-wrapper">
-              <img src="assets/avatar-meet.svg" alt="Meet Gangwal - CEO" class="team-avatar-img">
+              <img src="assets/photo-meet.jpg" alt="Meet Gangwal - CEO" class="team-avatar-img">
               <span class="team-ucid-badge">UCID: 2025510018</span>
             </div>
             <h3 class="team-name">Meet Gangwal</h3>
@@ -497,7 +407,7 @@
           <!-- Member 2: Nupur Thakur (CPO) -->
           <div class="team-card" id="team-card-nupur">
             <div class="team-avatar-wrapper">
-              <img src="assets/avatar-nupur.svg" alt="Nupur Thakur - CPO" class="team-avatar-img">
+              <img src="assets/photo-nupur.jpg" alt="Nupur Thakur - CPO" class="team-avatar-img">
               <span class="team-ucid-badge">UCID: 2025510066</span>
             </div>
             <h3 class="team-name">Nupur Thakur</h3>
@@ -523,7 +433,7 @@
           <!-- Member 3: Aryan Dandekar (CTO) -->
           <div class="team-card" id="team-card-aryan">
             <div class="team-avatar-wrapper">
-              <img src="assets/avatar-aryan.svg" alt="Aryan Dandekar - CTO" class="team-avatar-img">
+              <img src="assets/photo-aryan.jpg" alt="Aryan Dandekar - CTO" class="team-avatar-img">
               <span class="team-ucid-badge">UCID: 2025510014</span>
             </div>
             <h3 class="team-name">Aryan Dandekar</h3>
@@ -549,7 +459,7 @@
           <!-- Member 4: Sujal Meshram (COO) -->
           <div class="team-card" id="team-card-sujal">
             <div class="team-avatar-wrapper">
-              <img src="assets/avatar-sujal.svg" alt="Sujal Meshram - COO" class="team-avatar-img">
+              <img src="assets/photo-sujal.jpg" alt="Sujal Meshram - COO" class="team-avatar-img">
               <span class="team-ucid-badge">UCID: 2025510040</span>
             </div>
             <h3 class="team-name">Sujal Meshram</h3>

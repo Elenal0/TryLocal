@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2-Page Promotional Brochure | TryLocal — Hyperlocal Fashion Home Trials</title>
-  <meta name="description" content="View and download the official 2-Page Promotional Brochure for TryLocal. Hyperlocal Fashion Home-Trial Logistics startup from SPIT Mumbai.">
-  
+  <title>TryLocal Brochure | Hyperlocal Fashion Home Trials — Mumbai</title>
+  <meta name="description" content="View and download the official TryLocal brochure. Hyperlocal fashion home-trial service from SPIT Mumbai.">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body style="background:#F8FAFC;">
+<body style="background:#EBEFEE;">
 
   <!-- Top Announcement Bar -->
   <div class="top-bar">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <!-- Header (Fixed & Non-wrapping) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-link">
@@ -51,10 +51,10 @@
       </nav>
 
       <div class="nav-cta-group">
-        <button class="btn btn-sm btn-primary action-download-brochure" id="btn-header-brochure-download">
+        <button class="btn btn-sm btn-primary action-download-brochure" id="btn-header-brochure-download" onclick="window.print()">
           <span>📥 Download PDF</span>
         </button>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
           <span></span>
           <span></span>
           <span></span>
@@ -63,251 +63,186 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container section-py-sm">
-    <div class="section-header" style="margin-bottom:2rem;">
-      <span class="badge badge-green section-tag">Marketing &amp; Product Material</span>
-      <h1 class="section-title">TryLocal 2-Page Promotional Brochure</h1>
-      <p class="section-subtitle">
-        Explore our comprehensive two-page visual showcase designed for Mumbai fashion shoppers and local boutique retailers. Switch between interactive spread view or the embedded PDF reader.
-      </p>
-    </div>
+  <!-- Brochure Viewer Layout -->
+  <main style="padding-top:2.5rem; padding-bottom:4rem;">
+    <div class="container">
 
-    <!-- Brochure Showcase Container -->
-    <div class="brochure-showcase-box">
-      <!-- Toolbar with View Switcher -->
-      <div class="brochure-toolbar">
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <span style="font-weight:700; font-size:1.05rem;">📄 Brochure Display Mode:</span>
-          <div class="brochure-view-tabs">
-            <button class="brochure-tab-btn is-active" data-view="spread">2-Page Spread</button>
-            <button class="brochure-tab-btn" data-view="page1">Page 1 (Discovery &amp; Fit)</button>
-            <button class="brochure-tab-btn" data-view="page2">Page 2 (Returns &amp; Tech)</button>
-            <button class="brochure-tab-btn" data-view="pdf">Embedded PDF Viewer</button>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:0.75rem;">
-          <button class="btn btn-sm btn-outline action-download-brochure" style="color:#FFFFFF; border-color:rgba(255,255,255,0.4);">
-            <span>🖨️ Print / Save PDF</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Spread Wrapper (Page 1 & Page 2) -->
-      <div class="brochure-spread-wrapper" id="brochure-spread-container">
-        
-        <!-- PAGE 1: Front Cover & Customer Value -->
-        <div class="brochure-page-card" id="brochure-page-1">
-          <div class="brochure-p1-header">
-            <span class="brochure-badge">HYPERLOCAL FASHION LOGISTICS</span>
-            <h2 class="brochure-p1-title">Try<span>Local</span></h2>
-            <div class="brochure-p1-tagline">"Your Favourite Fits, Tried at Home."</div>
-            <p style="font-size:0.8rem; color:#E2E8F0; margin-top:0.75rem; line-height:1.5;">
-              Bringing Mumbai's neighborhood clothing boutiques directly to your doorstep for scheduled home fitting trials.
-            </p>
-          </div>
-
-          <div class="brochure-p1-body">
-            <!-- Feature Highlight 1: Hyperlocal Discovery -->
-            <div class="brochure-feature-box">
-              <div class="brochure-feat-icon">📍</div>
-              <div class="brochure-feat-content">
-                <h4>1. Hyperlocal Store Discovery</h4>
-                <p>
-                  Discover verified independent boutiques, ethnic wear, and modern streetwear brands within 3–5 km in Mumbai. Zero wait for cross-country shipping.
-                </p>
-              </div>
-            </div>
-
-            <!-- Feature Highlight 2: Zero-Fit Uncertainty -->
-            <div class="brochure-feature-box">
-              <div class="brochure-feat-icon">🪞</div>
-              <div class="brochure-feat-content">
-                <h4>2. Zero-Fit Uncertainty</h4>
-                <p>
-                  Try on clothes in the privacy and comfort of your bedroom mirror. Check fabric drape, texture, and authentic natural daylight colors with complete peace of mind.
-                </p>
-              </div>
-            </div>
-
-            <!-- Feature Highlight 3: Scheduled Delivery Slots -->
-            <div class="brochure-feature-box">
-              <div class="brochure-feat-icon">⏱️</div>
-              <div class="brochure-feat-content">
-                <h4>3. 45-Minute Scheduled Slot</h4>
-                <p>
-                  No waiting around all day for couriers. Book an exact time window when you are relaxed at home (e.g. evening 6:30 PM).
-                </p>
-              </div>
-            </div>
-
-            <!-- Visual callout quote box -->
-            <div style="background:#ECFDF5; border:1px dashed #10B981; border-radius:var(--radius-sm); padding:1rem; margin-top:auto; font-size:0.8rem; color:#064E3B;">
-              <strong>Did You Know?</strong> 60% of online fashion returns occur because of size and fitting doubts. TryLocal completely eliminates pre-purchase guesswork!
-            </div>
-          </div>
-
-          <div class="brochure-page-footer">
-            <span>TryLocal Brochure • Page 1 of 2</span>
-            <span>Grace Pinnacle, Andheri West, Mumbai</span>
-          </div>
-        </div>
-
-        <!-- PAGE 2: Operations, Instant Returns & Retailer Digitalization -->
-        <div class="brochure-page-card" id="brochure-page-2">
-          <div class="brochure-p2-header">
-            <span class="brochure-badge" style="background:#0F2B5C;">OPERATIONS &amp; PARTNERSHIP</span>
-            <h3>How TryLocal Works</h3>
-            <p style="font-size:0.8rem; color:#D1FAE5;">
-              Simple 4-phase cycle: Discover → Select → Try at Home → Keep What Fits.
-            </p>
-          </div>
-
-          <div class="brochure-steps-list">
-            <!-- Feature Highlight 4: Instant Spot Returns -->
-            <div class="brochure-feature-box" style="margin-bottom:0.75rem;">
-              <div class="brochure-feat-icon" style="background:#EFF6FF; color:#1E40AF;">⚡</div>
-              <div class="brochure-feat-content">
-                <h4>4. Instant Spot Returns</h4>
-                <p>
-                  No repacking boxes or waiting for courier pickups. The runner waits while you try, collects unbought pieces immediately, and finalizes your bill.
-                </p>
-              </div>
-            </div>
-
-            <!-- Feature Highlight 5: Retailer Digitalization -->
-            <div class="brochure-feature-box" style="margin-bottom:0.75rem;">
-              <div class="brochure-feat-icon" style="background:#FEF3C7; color:#B45309;">🏪</div>
-              <div class="brochure-feat-content">
-                <h4>5. Retailer Digitalization</h4>
-                <p>
-                  Local Mumbai shopkeepers gain an enterprise dashboard, live stock synchronization, and expanded customer reach without high marketing expenses.
-                </p>
-              </div>
-            </div>
-
-            <!-- Workflow Mini Steps -->
-            <div style="font-weight:700; font-size:0.85rem; color:var(--color-primary); margin-top:0.25rem;">
-              Fast 10-Minute Doorstep Flow:
-            </div>
-            
-            <div class="brochure-mini-step">
-              <span class="brochure-step-num">A</span>
-              <span>Select 3–5 items on mobile app from nearby stores.</span>
-            </div>
-            <div class="brochure-mini-step">
-              <span class="brochure-step-num">B</span>
-              <span>Runner delivers sanitized garment bag at chosen time.</span>
-            </div>
-            <div class="brochure-mini-step">
-              <span class="brochure-step-num">C</span>
-              <span>15–20 minutes trial in your mirror; decide what to keep.</span>
-            </div>
-            <div class="brochure-mini-step">
-              <span class="brochure-step-num">D</span>
-              <span>Pay only for kept items; trial fee waived if you buy!</span>
-            </div>
-          </div>
-
-          <!-- Contact & Team Banner -->
-          <div class="brochure-contact-banner">
-            <div style="font-weight:700; color:#34D399; font-size:0.85rem;">SPIT Mumbai Student Founders:</div>
-            <div>Meet Gangwal (CEO) • Nupur Thakur (CPO)</div>
-            <div>Aryan Dandekar (CTO) • Sujal Meshram (COO)</div>
-            <div style="margin-top:0.25rem; font-size:0.7rem; color:#94A3B8;">
-              📍 Grace Pinnacle, 1105, Andheri West, Mumbai | ✉ nupur.thakur25@spit.ac.in
-            </div>
-          </div>
-
-          <div class="brochure-page-footer">
-            <span>TryLocal Brochure • Page 2 of 2</span>
-            <span>SPIT MCA Academic Practical (EIPR)</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Embedded PDF Viewer Slot (Placeholder & Iframe) -->
-      <div class="pdf-embed-container" id="brochure-pdf-embed" style="display:none;">
-        <div class="pdf-placeholder-card">
-          <div style="font-size:3rem; margin-bottom:1rem;">📑</div>
-          <h3 style="font-size:1.4rem; margin-bottom:0.5rem; color:#FFFFFF;">Official Brochure PDF Slot</h3>
-          <p style="font-size:0.875rem; color:#CBD5E1; line-height:1.6; margin-bottom:1.5rem;">
-            This container is reserved for embedding your finalized two-page promotional brochure PDF directly or via Google Drive Viewer.
-          </p>
-          
-          <div style="display:flex; flex-direction:column; gap:0.75rem; text-align:left; background:rgba(0,0,0,0.3); padding:1rem; border-radius:var(--radius-sm); font-size:0.8rem; color:#94A3B8; margin-bottom:1.5rem;">
-            <div><strong>How to embed your PDF:</strong></div>
-            <div>1. Place your PDF as <code>assets/TryLocal-Brochure.pdf</code></div>
-            <div>2. Or paste your Google Drive Share Link below:</div>
-            <input type="text" id="custom-brochure-url" placeholder="https://drive.google.com/file/d/YOUR_BROCHURE_ID/preview" style="background:#0F172A; border:1px solid #334155; color:#FFFFFF; padding:0.5rem; border-radius:4px; font-size:0.8rem;">
-            <button class="btn btn-sm btn-primary" onclick="alert('Google Drive Link updated! When your real file is ready, replace YOUR_BROCHURE_ID.');">
-              Set Brochure URL
-            </button>
-          </div>
-
-          <button class="btn btn-outline action-download-brochure" style="color:#FFFFFF; border-color:#CBD5E1;">
-            <span>🖨️ Print Digital Spread as PDF</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Core Feature Highlight Cards Section -->
-    <div style="margin-top:4rem;">
-      <div class="section-header" style="margin-bottom:2.5rem;">
-        <span class="badge badge-blue section-tag">Strategic Pillars</span>
-        <h2 class="section-title">Why TryLocal Reinvents Fashion Retail</h2>
-        <p class="section-subtitle">
-          Detailed breakdown of the 4 core value proposition features showcased in our promotional brochure.
+      <!-- Page heading -->
+      <div class="section-header" style="margin-bottom:2rem; text-align:center;">
+        <span class="badge badge-amber section-tag">Marketing Showcase</span>
+        <h1 class="section-title" style="font-size:clamp(1.6rem,4vw,2.25rem);">TryLocal Official Brochure</h1>
+        <p class="section-subtitle" style="max-width:540px; margin:0 auto; color:#6B5A52;">
+          Our 2-page visual presentation for customers and partner boutiques across Mumbai.
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem;">
-        <!-- Card 1 -->
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.75rem 1.25rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:2rem; margin-bottom:0.75rem;">📍</div>
-          <h3 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.5rem;">Hyperlocal Discovery</h3>
-          <p style="font-size:0.825rem; color:#475569; line-height:1.5;">
-            Connects shoppers directly to verified clothing stores within a 3–5 km radius in Mumbai for lightning-fast delivery and local fashion support.
-          </p>
+      <!-- Brochure + Sidebar layout -->
+      <div class="brochure-viewer-layout" id="brochure-viewer-layout">
+
+        <!-- ===== BROCHURE SPREAD ===== -->
+        <div class="brochure-spread-wrapper" id="brochure-spread-container">
+
+          <!-- PAGE 1 -->
+          <div class="brochure-page-card" id="brochure-page-1">
+            <div class="brochure-p1-header">
+              <span class="brochure-badge">HYPERLOCAL FASHION LOGISTICS</span>
+              <h2 class="brochure-p1-title">Try<span>Local</span></h2>
+              <div class="brochure-p1-tagline">"Your Favourite Fits, Tried at Home."</div>
+              <p style="font-size:0.8rem; color:#EBEFEE; margin-top:0.75rem; line-height:1.5;">
+                Bringing Mumbai's neighborhood clothing boutiques directly to your doorstep for scheduled home fitting trials.
+              </p>
+            </div>
+
+            <!-- Hero image for page 1 -->
+            <div style="border-radius:12px; overflow:hidden; margin:1rem 0; max-height:170px;">
+              <img src="assets/trylocal_fitting_mirror.jpg" alt="In-Home Fitting" style="width:100%; height:170px; object-fit:cover;">
+            </div>
+
+            <div class="brochure-p1-body">
+              <div class="brochure-feature-box">
+                <div class="brochure-feat-icon">📍</div>
+                <div class="brochure-feat-content">
+                  <h4>1. Hyperlocal Store Discovery</h4>
+                  <p>Browse verified boutiques within 3–5 km in Mumbai. Zero wait for cross-country shipping.</p>
+                </div>
+              </div>
+
+              <div class="brochure-feature-box">
+                <div class="brochure-feat-icon">🪞</div>
+                <div class="brochure-feat-content">
+                  <h4>2. Zero-Fit Uncertainty</h4>
+                  <p>Try on clothes in the privacy of your bedroom. Feel the fabric and see real daylight colors.</p>
+                </div>
+              </div>
+
+              <div class="brochure-feature-box">
+                <div class="brochure-feat-icon">⏱️</div>
+                <div class="brochure-feat-content">
+                  <h4>3. 45-Minute Scheduled Slot</h4>
+                  <p>Book an exact delivery window when you're relaxed at home — no courier surprises.</p>
+                </div>
+              </div>
+
+              <div style="background:#FAF8F5; border:1px dashed #BB6C43; border-radius:var(--radius-sm); padding:1rem; margin-top:auto; font-size:0.8rem; color:#4A413C;">
+                <strong style="color:#BB6C43;">Did You Know?</strong> 60% of online fashion returns happen because of fitting doubts. TryLocal eliminates the guesswork!
+              </div>
+            </div>
+
+            <div class="brochure-page-footer">
+              <span>TryLocal Brochure • Page 1 of 2</span>
+              <span>Grace Pinnacle, Andheri West, Mumbai</span>
+            </div>
+          </div>
+
+          <!-- PAGE 2 -->
+          <div class="brochure-page-card" id="brochure-page-2">
+            <div class="brochure-p2-header">
+              <span class="brochure-badge">HOW IT WORKS</span>
+              <h3>Simple 4-Phase Cycle</h3>
+              <p style="font-size:0.8rem; color:#CCB499;">
+                Discover → Select → Try at Home → Keep What Fits
+              </p>
+            </div>
+
+            <!-- Hero image for page 2 -->
+            <div style="border-radius:12px; overflow:hidden; margin:1rem 0; max-height:150px;">
+              <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep Delivery" style="width:100%; height:150px; object-fit:cover;">
+            </div>
+
+            <div class="brochure-steps-list">
+              <div class="brochure-feature-box" style="margin-bottom:0.75rem;">
+                <div class="brochure-feat-icon">⚡</div>
+                <div class="brochure-feat-content">
+                  <h4>4. Instant Spot Returns</h4>
+                  <p>No repacking. The runner waits, collects unwanted pieces immediately, and finalizes your bill on the spot.</p>
+                </div>
+              </div>
+
+              <div class="brochure-feature-box" style="margin-bottom:0.75rem;">
+                <div class="brochure-feat-icon">🏪</div>
+                <div class="brochure-feat-content">
+                  <h4>5. Local Boutique Partnership</h4>
+                  <p>Neighborhood store owners gain digital reach and live stock sync — no high marketing costs.</p>
+                </div>
+              </div>
+
+              <div style="font-weight:700; font-size:0.85rem; color:#4A413C; margin-top:0.5rem;">
+                Quick-Flow in 4 Steps:
+              </div>
+              <div class="brochure-mini-step"><span class="brochure-step-num">A</span><span>Select 3–5 items on the TryLocal app from nearby stores.</span></div>
+              <div class="brochure-mini-step"><span class="brochure-step-num">B</span><span>Runner delivers sanitized garment bag at your chosen time.</span></div>
+              <div class="brochure-mini-step"><span class="brochure-step-num">C</span><span>15–20 minutes in your mirror — decide what to keep.</span></div>
+              <div class="brochure-mini-step"><span class="brochure-step-num">D</span><span>Pay only for kept items; trial fee waived when you buy!</span></div>
+            </div>
+
+            <div class="brochure-contact-banner" style="padding:0.75rem 0.9rem;">
+              <div style="font-weight:700; color:#34D399; font-size:0.82rem; margin-bottom:0.5rem; text-align:center;">SPIT Mumbai Student Founders:</div>
+              <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.4rem; text-align:center; margin-bottom:0.5rem;">
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <img src="assets/photo-aryan.jpg" alt="Aryan Dandekar" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #38BDF8; margin-bottom:0.2rem;">
+                  <span style="font-size:0.72rem; font-weight:700; color:#F8FAFC;">Aryan</span>
+                  <span style="font-size:0.6rem; color:#94A3B8;">CTO</span>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <img src="assets/photo-meet.jpg" alt="Meet Gangwal" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #34D399; margin-bottom:0.2rem;">
+                  <span style="font-size:0.72rem; font-weight:700; color:#F8FAFC;">Meet</span>
+                  <span style="font-size:0.6rem; color:#94A3B8;">CEO</span>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <img src="assets/photo-sujal.jpg" alt="Sujal Meshram" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #38BDF8; margin-bottom:0.2rem;">
+                  <span style="font-size:0.72rem; font-weight:700; color:#F8FAFC;">Sujal</span>
+                  <span style="font-size:0.6rem; color:#94A3B8;">COO</span>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <img src="assets/photo-nupur.jpg" alt="Nupur Thakur" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #FBBF24; margin-bottom:0.2rem;">
+                  <span style="font-size:0.72rem; font-weight:700; color:#F8FAFC;">Nupur</span>
+                  <span style="font-size:0.6rem; color:#94A3B8;">CPO</span>
+                </div>
+              </div>
+              <div style="font-size:0.68rem; color:#94A3B8; text-align:center;">
+                📍 Grace Pinnacle, Andheri West, Mumbai | ✉ nupur.thakur25@spit.ac.in
+              </div>
+            </div>
+
+            <div class="brochure-page-footer">
+              <span>TryLocal Brochure • Page 2 of 2</span>
+              <span>SPIT MCA Venture</span>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Card 2 -->
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.75rem 1.25rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:2rem; margin-bottom:0.75rem;">🪞</div>
-          <h3 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.5rem;">Zero-Fit Uncertainty</h3>
-          <p style="font-size:0.825rem; color:#475569; line-height:1.5;">
-            Allows customers to evaluate garment size, texture, and true daylight color in their own bedroom mirrors before spending a single rupee.
-          </p>
-        </div>
+        <!-- ===== SIDEBAR ACTIONS ===== -->
+        <aside class="brochure-sidebar" id="brochure-sidebar">
+          <div class="brochure-sidebar-inner">
+            <div class="brochure-sidebar-logo">
+              <img src="assets/logo.svg" alt="TryLocal" height="36">
+            </div>
+            <div class="brochure-sidebar-title">TryLocal<br>Brochure</div>
+            <div class="brochure-sidebar-subtitle">2-Page Edition · Oct 2026</div>
+            <div class="brochure-sidebar-divider"></div>
+            <button class="btn btn-primary brochure-sidebar-dl action-download-brochure" id="brochure-sidebar-download-btn" onclick="window.print()">
+              <span>📥 Download PDF</span>
+            </button>
+            <button class="btn btn-outline brochure-sidebar-print action-download-brochure" id="brochure-sidebar-print-btn" onclick="window.print()" style="color:#4A413C; border-color:#CCB499; margin-top:0.75rem;">
+              <span>🖨️ Print / Save PDF</span>
+            </button>
+            <div class="brochure-sidebar-divider"></div>
+            <div class="brochure-sidebar-meta">
+              <div>📍 Andheri West, Mumbai</div>
+              <div>✉ <a href="mailto:nupur.thakur25@spit.ac.in">nupur.thakur25@spit.ac.in</a></div>
+            </div>
+          </div>
+        </aside>
 
-        <!-- Card 3 -->
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.75rem 1.25rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:2rem; margin-bottom:0.75rem;">⚡</div>
-          <h3 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.5rem;">Instant Spot Returns</h3>
-          <p style="font-size:0.825rem; color:#475569; line-height:1.5;">
-            Kept items are billed, and unwanted garments are collected on the spot by our runner. No packaging boxes, no postal trips, and zero refund wait.
-          </p>
-        </div>
-
-        <!-- Card 4 -->
-        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.75rem 1.25rem; box-shadow:var(--shadow-sm);">
-          <div style="font-size:2rem; margin-bottom:0.75rem;">🏪</div>
-          <h3 style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.5rem;">Retailer Digitalization</h3>
-          <p style="font-size:0.825rem; color:#475569; line-height:1.5;">
-            Equips local Mumbai clothing boutiques with digital inventory visibility, order scheduling, and expanded catchment area reach.
-          </p>
-        </div>
-      </div>
-    </div>
+      </div><!-- /brochure-viewer-layout -->
+    </div><!-- /container -->
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" style="margin-top:4rem;">
+  <footer class="site-footer" style="margin-top:2rem;">
     <div class="container footer-bottom" style="border:none; padding-top:0;">
-      <div>TryLocal 2-Page Brochure • SPIT Mumbai MCA Practical</div>
+      <div>TryLocal Brochure • SPIT Mumbai MCA Venture</div>
       <div>Grace Pinnacle, 1105, Andheri West, Mumbai</div>
     </div>
   </footer>

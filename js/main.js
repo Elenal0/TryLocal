@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTrialSimulator();
   initBrochureViewer();
   initVideoController();
+  initVideoOverlay();
+  initHIWCarousel();
   initPdfPrintActions();
 });
 
@@ -406,4 +408,64 @@ function initPdfPrintActions() {
       window.print();
     });
   });
+}
+
+/* ==========================================================================
+   HIW Carousel Controller
+   ========================================================================== */
+function initHIWCarousel() {
+  const track = document.getElementById('hiw-track');
+  const prevBtn = document.getElementById('hiw-prev');
+  const nextBtn = document.getElementById('hiw-next');
+  const dots = document.querySelectorAll('.hiw-dot');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.hiw-slide');
+  let current = 0;
+
+  function scrollTo(idx) {
+    if (idx < 0) idx = slides.length - 1;
+    if (idx >= slides.length) idx = 0;
+    current = idx;
+    const slide = slides[current];
+    track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => scrollTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => scrollTo(current + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => scrollTo(i)));
+
+  // Update dot on native scroll
+  track.addEventListener('scroll', () => {
+    const scrollLeft = track.scrollLeft;
+    let closest = 0;
+    slides.forEach((s, i) => {
+      if (Math.abs(s.offsetLeft - track.offsetLeft - scrollLeft) < Math.abs(slides[closest].offsetLeft - track.offsetLeft - scrollLeft)) {
+        closest = i;
+      }
+    });
+    current = closest;
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   Video Overlay Controller
+   ========================================================================== */
+function initVideoOverlay() {
+  const overlay = document.getElementById('video-overlay');
+  const playBtn = document.getElementById('video-play-btn');
+  const iframe = document.getElementById('trylocal-video-iframe');
+  if (!overlay || !iframe) return;
+
+  function play() {
+    overlay.classList.add('hidden');
+    const src = iframe.src;
+    if (!src.includes('autoplay=1')) {
+      iframe.src = src.replace('autoplay=0', 'autoplay=1');
+    }
+  }
+  overlay.addEventListener('click', play);
+  if (playBtn) playBtn.addEventListener('click', (e) => { e.stopPropagation(); play(); });
 }

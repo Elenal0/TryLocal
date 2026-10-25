@@ -3,216 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Nupur Thakur &amp; TryLocal Team | Hyperlocal Fashion Trials</title>
-  <meta name="description" content="Get in touch with Nupur Thakur and the TryLocal founding team at SPIT Mumbai. Retailer onboarding, shopper beta, and customer support.">
-  
-  <!-- Favicon -->
+  <title>Contact TryLocal | Mumbai Fashion Home Trials</title>
+  <meta name="description" content="Get in touch with the TryLocal team. Book a home trial, partner your Mumbai boutique, or just say hello.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-  
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: var(--bg-page); }
+    .contact-page-hero {
+      background: linear-gradient(135deg, #4A413C 0%, #6B5A52 100%);
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    .contact-page-hero h1 { font-size: clamp(2rem,5vw,3rem); color:#FFFFFF; margin-bottom:0.6rem; }
+    .contact-page-hero p { color:#DDD4CC; font-size:1.05rem; max-width:520px; margin:0 auto; }
+    .contact-badge {
+      display:inline-block; background:rgba(187,108,67,0.25); color:#F5C9A9;
+      border:1px solid rgba(187,108,67,0.4); border-radius:var(--radius-full);
+      font-size:0.78rem; font-weight:700; letter-spacing:0.08em; padding:0.3rem 0.9rem;
+      text-transform:uppercase; margin-bottom:1.2rem;
+    }
+    .cq-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:-2rem 0 3rem;
+    }
+    .cq-tile {
+      background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg);
+      padding:1.5rem 1rem; text-align:center; text-decoration:none; color:inherit;
+      box-shadow:var(--shadow-md);
+      transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display:flex; flex-direction:column; align-items:center; gap:0.35rem;
+    }
+    .cq-tile:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--color-accent); }
+    .cq-icon { font-size:1.8rem; }
+    .cq-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); }
+    .cq-value { font-size:0.88rem; font-weight:600; color:var(--color-primary); word-break:break-all; }
+    .contact-body { display:grid; grid-template-columns:1fr 380px; gap:2rem; align-items:start; }
+    .cf-card { background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:2.25rem; box-shadow:var(--shadow-sm); }
+    .cf-card h2 { font-size:1.3rem; color:var(--color-primary); margin-bottom:0.3rem; }
+    .cf-card .cf-sub { font-size:0.85rem; color:var(--text-muted); margin-bottom:1.75rem; }
+    .team-side {
+      background:linear-gradient(160deg,#4A413C 0%,#3A3330 100%);
+      border-radius:var(--radius-lg); padding:2rem 1.5rem; box-shadow:var(--shadow-lg);
+    }
+    .team-side-heading { font-size:1.1rem; font-weight:800; color:#FFFFFF; margin-bottom:0.3rem; }
+    .team-side-sub { font-size:0.82rem; color:#C8B4A8; margin-bottom:1.5rem; line-height:1.5; }
+    .member-row {
+      display:flex; align-items:center; gap:0.9rem; padding:0.75rem 0.9rem;
+      border-radius:var(--radius-md); background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08); transition:background 0.2s,border-color 0.2s;
+      margin-bottom:0.6rem;
+    }
+    .member-row:last-child { margin-bottom:0; }
+    .member-row:hover { background:rgba(187,108,67,0.12); border-color:rgba(187,108,67,0.35); }
+    .member-avatar {
+      width:46px; height:46px; border-radius:50%; object-fit:cover; flex-shrink:0;
+      border:2px solid rgba(187,108,67,0.5);
+    }
+    .member-initial {
+      width:46px; height:46px; border-radius:50%; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; font-weight:800; color:#FFFFFF;
+      background:linear-gradient(135deg,#BB6C43,#C8906D);
+      border:2px solid rgba(187,108,67,0.5);
+    }
+    .member-name { font-weight:700; color:#FFFFFF; font-size:0.92rem; line-height:1.2; }
+    .member-role { font-size:0.75rem; color:#C8906D; font-weight:500; }
+    .member-email { font-size:0.75rem; color:#B0A09A; margin-top:0.1rem; }
+    @media (max-width:900px) {
+      .cq-grid { grid-template-columns:repeat(2,1fr); }
+      .contact-body { grid-template-columns:1fr; }
+      .team-side { order:-1; }
+    }
+  </style>
 </head>
-<body style="background:#F8FAFC;">
+<body>
 
-  <!-- Top Announcement Bar -->
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
         <span class="top-bar-badge">Live in Mumbai</span>
-        <span>⚡ 30-Min In-Home Fashion Trials • Andheri West, Bandra &amp; Juhu</span>
-        <span class="top-bar-lead-pill">SPIT Mumbai MCA Venture</span>
+        <span>⚡ 30-Min In-Home Fashion Trials · Andheri West, Bandra &amp; Juhu</span>
       </div>
       <div class="top-bar-meta">
-        <a href="mailto:nupur.thakur25@spit.ac.in">
-          <span>✉ nupur.thakur25@spit.ac.in</span>
-        </a>
+        <a href="mailto:nupur.thakur25@spit.ac.in"><span>✉ nupur.thakur25@spit.ac.in</span></a>
         <span>📍 Andheri West, Mumbai</span>
       </div>
     </div>
   </div>
 
-  <!-- Main Sticky Header (Fixed & Non-wrapping) -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-link" id="brand-logo-link">
         <img src="assets/logo.svg" alt="TryLocal Logo" height="44">
       </a>
-
-      <!-- Desktop Nav Menu -->
       <nav>
         <ul class="nav-menu" id="primary-nav">
           <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
           <li><a href="index.html#how-it-works" class="nav-link" id="nav-workflow">How It Works</a></li>
-          <li><a href="index.html#experience" class="nav-link" id="nav-experience">Experience</a></li>
-          <li><a href="index.html#simulator" class="nav-link" id="nav-demo">Try-at-Home Demo</a></li>
-          <li><a href="profile.html" class="nav-link" id="nav-profile">Story &amp; Profile</a></li>
+          <li><a href="index.html#experience" class="nav-link" id="nav-experience">Watch</a></li>
+          <li><a href="profile.html" class="nav-link" id="nav-profile">Story</a></li>
           <li><a href="brochure.html" class="nav-link" id="nav-brochure">Brochure</a></li>
           <li><a href="contact.html" class="nav-link active" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- CTA Group -->
       <div class="nav-cta-group">
         <a href="index.html#simulator" class="btn btn-sm btn-primary" id="nav-cta-trial-btn">
           <span>⚡ Book a Trial</span>
         </a>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-toggle-btn">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container section-py-sm">
-    <div class="section-header" style="margin-bottom:2.5rem;">
-      <span class="badge badge-green section-tag">Direct Contact</span>
-      <h1 class="section-title">Get in Touch with TryLocal</h1>
-      <p class="section-subtitle">
-        Have questions about booking an in-home fashion trial, partnering your local Mumbai boutique, or exploring our startup concept? Reach out directly to our team.
-      </p>
+  <div class="contact-page-hero">
+    <div class="container">
+      <div class="contact-badge">Get In Touch</div>
+      <h1>Say Hello 👋</h1>
+      <p>Book a home trial, onboard your boutique, or just drop us a message. We reply fast.</p>
     </div>
+  </div>
 
-    <!-- Nupur Thakur Direct Spotlight Card -->
-    <div class="contact-spotlight-card">
-      <div class="spotlight-avatar-box">
-        <img src="assets/avatar-nupur.svg" alt="Nupur Thakur - CPO" class="spotlight-avatar">
-        <div class="spotlight-verified-badge" title="Verified Founder">✓</div>
+  <main class="container" style="padding-top:0;padding-bottom:5rem;">
+
+    <div class="cq-grid">
+      <a href="mailto:nupur.thakur25@spit.ac.in" class="cq-tile" id="cqt-email">
+        <div class="cq-icon">✉️</div>
+        <div class="cq-label">Email</div>
+        <div class="cq-value">nupur.thakur25@spit.ac.in</div>
+      </a>
+      <a href="tel:+918340602621" class="cq-tile" id="cqt-phone">
+        <div class="cq-icon">📞</div>
+        <div class="cq-label">Call / WhatsApp</div>
+        <div class="cq-value">+91 83406 02621</div>
+      </a>
+      <div class="cq-tile" id="cqt-location">
+        <div class="cq-icon">📍</div>
+        <div class="cq-label">Location</div>
+        <div class="cq-value">Andheri West, Mumbai</div>
       </div>
-      <div class="spotlight-info">
-        <span class="spotlight-badge">Primary Point of Contact</span>
-        <h2 class="spotlight-name">Nupur Thakur</h2>
-        <div class="spotlight-role">Co-Founder &amp; Chief Product Officer (CPO) • SPIT Mumbai MCA</div>
-        <p style="font-size:0.9rem; color:#CBD5E1; line-height:1.6; max-width:680px;">
-          Nupur leads product vision, in-home fitting workflows, customer experience architecture, and platform feature releases for TryLocal across Mumbai.
-        </p>
-        <div class="spotlight-contact-links">
-          <a href="mailto:nupur.thakur25@spit.ac.in" class="spotlight-btn-mail">
-            <span>✉ nupur.thakur25@spit.ac.in</span>
-          </a>
-          <a href="tel:8340602621" class="btn btn-sm btn-outline" style="color:#FFFFFF; border-color:rgba(255,255,255,0.4);">
-            <span>📞 +91 8340602621</span>
-          </a>
-          <span style="font-size:0.825rem; color:#A7F3D0; display:inline-flex; align-items:center; gap:0.35rem;">
-            <span>📍</span> Sardar Patel Institute of Technology (SPIT), Mumbai
-          </span>
-        </div>
+      <div class="cq-tile" id="cqt-hours">
+        <div class="cq-icon">⏰</div>
+        <div class="cq-label">Trial Hours</div>
+        <div class="cq-value">Mon–Sun · 10 AM – 9 PM</div>
       </div>
     </div>
 
-    <div class="contact-grid">
-      <!-- Left Info Card -->
-      <div class="contact-info-card">
-        <div>
-          <h3 style="font-size:1.35rem; color:#FFFFFF; margin-bottom:0.4rem;">Campus &amp; Project Coordinates</h3>
-          <p style="color:#CBD5E1; font-size:0.875rem; line-height:1.6;">
-            TryLocal is an institutional startup venture conceived at Sardar Patel Institute of Technology (SPIT), Andheri West.
-          </p>
-        </div>
+    <div class="contact-body">
 
-        <!-- Address -->
-        <div class="contact-channel-item">
-          <div class="contact-channel-icon">📍</div>
-          <div class="contact-channel-text">
-            <strong>Headquarters / Project Office</strong>
-            <p>Grace Pinnacle, 1105, Andheri West, Mumbai, Maharashtra 400058</p>
-          </div>
-        </div>
-
-        <!-- College -->
-        <div class="contact-channel-item">
-          <div class="contact-channel-icon">🏛️</div>
-          <div class="contact-channel-text">
-            <strong>Academic Institution</strong>
-            <p>Sardar Patel Institute of Technology (SPIT)<br>Bhavan's Campus, Munshi Nagar, Andheri West, Mumbai 400058</p>
-          </div>
-        </div>
-
-        <!-- Direct Emails -->
-        <div class="contact-channel-item">
-          <div class="contact-channel-icon">✉️</div>
-          <div class="contact-channel-text">
-            <strong>Founding Team Directory</strong>
-            <p style="line-height:1.8;">
-              <strong>Meet Gangwal (CEO):</strong> <a href="mailto:meet.gangwal25@spit.ac.in">meet.gangwal25@spit.ac.in</a><br>
-              <strong>Nupur Thakur (CPO):</strong> <a href="mailto:nupur.thakur25@spit.ac.in" style="color:#34D399;">nupur.thakur25@spit.ac.in</a><br>
-              <strong>Aryan Dandekar (CTO):</strong> <a href="mailto:aryan.dandekar25@spit.ac.in">aryan.dandekar25@spit.ac.in</a><br>
-              <strong>Sujal Meshram (COO):</strong> <a href="mailto:sujal.meshram25@spit.ac.in">sujal.meshram25@spit.ac.in</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Service Hours -->
-        <div class="contact-channel-item">
-          <div class="contact-channel-icon">⏰</div>
-          <div class="contact-channel-text">
-            <strong>Trial Hours &amp; Response Time</strong>
-            <p>Doorstep Trials: Mon–Sun, 10:00 AM – 9:00 PM<br>Email Responses: Typically within 2 hours</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Form Card -->
-      <div class="contact-form-card">
-        <h3 style="font-size:1.35rem; color:var(--color-primary); margin-bottom:0.5rem;">
-          Send an Inquiry to Nupur &amp; Team
-        </h3>
-        <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1.5rem;">
-          Whether you want to test our trial service, onboard your boutique, or evaluate our project, fill in the details below.
-        </p>
-
-        <form id="contact-inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Nupur Thakur (nupur.thakur25@spit.ac.in) and the TryLocal team. We will get back to you shortly.'); this.reset();">
+      <div class="cf-card">
+        <h2>Send a Message</h2>
+        <p class="cf-sub">We reply within a few hours. No spam, ever.</p>
+        <form id="contact-inquiry-form" onsubmit="event.preventDefault();alert('Thanks! We\'ll get back to you shortly.');this.reset();">
           <div class="form-group">
-            <label class="form-label" for="contact-name">Full Name *</label>
+            <label class="form-label" for="contact-name">Your Name *</label>
             <input type="text" id="contact-name" class="form-control" placeholder="e.g. Priya Sharma" required>
           </div>
-
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
             <div class="form-group">
-              <label class="form-label" for="contact-email">Email Address *</label>
+              <label class="form-label" for="contact-email">Email *</label>
               <input type="email" id="contact-email" class="form-control" placeholder="name@domain.com" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="contact-phone">Phone Number *</label>
-              <input type="tel" id="contact-phone" class="form-control" placeholder="+91 98765 43210" required>
+              <label class="form-label" for="contact-phone">Phone</label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="+91 98765 43210">
             </div>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="contact-category">I am reaching out as a:</label>
+            <label class="form-label" for="contact-category">I'm reaching out as a</label>
             <select id="contact-category" class="form-control">
-              <option value="shopper">Customer / Shopper (Join Trial Waitlist)</option>
-              <option value="retailer">Local Mumbai Boutique Owner (Partner with TryLocal)</option>
-              <option value="evaluator">Academic Evaluator / Faculty / Mentor</option>
-              <option value="investor">Angel / Venture Partner</option>
+              <option value="shopper">Shopper — Join the Trial Waitlist</option>
+              <option value="retailer">Boutique Owner — Partner with TryLocal</option>
+              <option value="evaluator">Faculty / Mentor / Evaluator</option>
+              <option value="investor">Investor / Venture Partner</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label" for="contact-location">Your Area / Neighborhood in Mumbai</label>
-            <input type="text" id="contact-location" class="form-control" placeholder="e.g. Andheri West, Bandra, Juhu, Lokhandwala">
+            <label class="form-label" for="contact-message">Your Message</label>
+            <textarea id="contact-message" class="form-control" rows="4" placeholder="Hi, I'd love to book a home trial…"></textarea>
           </div>
-
-          <div class="form-group">
-            <label class="form-label" for="contact-message">Message or Feedback</label>
-            <textarea id="contact-message" class="form-control" rows="4" placeholder="Hi Nupur, I would love to try the 30-minute home trial / I own a boutique store in Mumbai..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width:100%;">
-            <span>Send Message to Nupur Thakur &amp; Team →</span>
+          <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="width:100%;margin-top:0.5rem;">
+            <span>Send Message →</span>
           </button>
         </form>
       </div>
+
+      <div class="team-side">
+        <div class="team-side-heading">The Team</div>
+        <p class="team-side-sub">Based at SPIT Mumbai — always happy to connect.</p>
+
+        <!-- To add a real photo, drop the file in assets/ and swap div.member-initial with:
+             <img src="assets/nupur.jpg" alt="Nupur" class="member-avatar"> -->
+
+        <div class="member-row" id="team-row-nupur">
+          <img src="assets/photo-nupur.jpg" alt="Nupur Thakur" class="member-avatar">
+          <div>
+            <div class="member-name">Nupur Thakur</div>
+            <div class="member-role">Co-Founder &amp; CPO</div>
+            <div class="member-email">nupur.thakur25@spit.ac.in</div>
+          </div>
+        </div>
+
+        <div class="member-row" id="team-row-meet">
+          <img src="assets/photo-meet.jpg" alt="Meet Gangwal" class="member-avatar">
+          <div>
+            <div class="member-name">Meet Gangwal</div>
+            <div class="member-role">Co-Founder &amp; CEO</div>
+            <div class="member-email">meet.gangwal25@spit.ac.in</div>
+          </div>
+        </div>
+
+        <div class="member-row" id="team-row-aryan">
+          <img src="assets/photo-aryan.jpg" alt="Aryan Dandekar" class="member-avatar">
+          <div>
+            <div class="member-name">Aryan Dandekar</div>
+            <div class="member-role">Co-Founder &amp; CTO</div>
+            <div class="member-email">aryan.dandekar25@spit.ac.in</div>
+          </div>
+        </div>
+
+        <div class="member-row" id="team-row-sujal">
+          <img src="assets/photo-sujal.jpg" alt="Sujal Meshram" class="member-avatar">
+          <div>
+            <div class="member-name">Sujal Meshram</div>
+            <div class="member-role">Co-Founder &amp; COO</div>
+            <div class="member-email">sujal.meshram25@spit.ac.in</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;padding:1rem;background:rgba(187,108,67,0.12);border-radius:var(--radius-md);border:1px solid rgba(187,108,67,0.25);">
+          <p style="font-size:0.8rem;color:#DDD4CC;line-height:1.6;margin:0;">
+            📍 Sardar Patel Institute of Technology (SPIT)<br>
+            Andheri West, Mumbai — 400058
+          </p>
+        </div>
+      </div>
+
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer" style="margin-top:4rem;">
-    <div class="container footer-bottom" style="border:none; padding-top:0;">
-      <div>TryLocal Contact &amp; Retailer Center • Contact: <a href="mailto:nupur.thakur25@spit.ac.in" style="color:#34D399;">nupur.thakur25@spit.ac.in</a></div>
-      <div>Sardar Patel Institute of Technology (SPIT), Andheri West, Mumbai</div>
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:none;padding-top:0;">
+      <div>© 2026 TryLocal Team · SPIT Mumbai</div>
+      <div><a href="mailto:nupur.thakur25@spit.ac.in" style="color:#C8906D;">nupur.thakur25@spit.ac.in</a></div>
     </div>
   </footer>
 
