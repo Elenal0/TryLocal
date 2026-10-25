@@ -166,34 +166,27 @@
     </section>
 
     <!-- Video Section -->
-    <section class="section-py" id="experience" style="background:#FFFFFF;">
+    <section class="section-py" id="experience" style="background:#FAF8F5; padding: 4.5rem 0;">
       <div class="container">
-        <div class="section-header" style="margin-bottom:2.5rem;">
+        <div class="section-header" style="margin-bottom:2.5rem; text-align:center;">
           <span class="badge badge-amber section-tag">See It In Action</span>
           <h2 class="section-title">What TryLocal Feels Like</h2>
-          <p class="section-subtitle">Real clothes. Your mirror. Zero guesswork.</p>
+          <p class="section-subtitle" style="color:#6B5A52; max-width:620px; margin:0 auto;">
+            Real clothes. Your mirror. Zero guesswork — watch how TryLocal brings the boutique to your bedroom.
+          </p>
         </div>
 
-        <div class="video-embed-wrapper" id="video-embed-wrapper">
-          <!-- Replace the src with your YouTube embed or MP4 URL -->
-          <iframe
-            id="trylocal-video-iframe"
-            src="https://drive.google.com/file/d/1EXAqi4V9Hag-8HY2-lWvq5NryW11QBE4/preview"
-            title="TryLocal — Real Fashion Home Trials Mumbai"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="border:none;"
-          ></iframe>
-          <!-- Video overlay play button shown until user clicks -->
-          <div class="video-overlay" id="video-overlay">
-            <img src="assets/trylocal_fitting_mirror.jpg" alt="TryLocal preview" class="video-thumb">
-            <button class="video-play-btn" id="video-play-btn" aria-label="Play video">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
-                <circle cx="40" cy="40" r="40" fill="rgba(187,108,67,0.92)"/>
-                <polygon points="32,24 60,40 32,56" fill="#FFFFFF"/>
-              </svg>
-            </button>
-            <div class="video-overlay-label">Watch the TryLocal Experience</div>
+        <!-- 16:9 Centered Widescreen Video Showcase -->
+        <div class="video-showcase-card" style="max-width:960px; margin:0 auto; border-radius:18px; overflow:hidden; box-shadow:0 24px 60px rgba(74,65,60,0.2); border:1px solid rgba(204,180,153,0.45); background:#0A0807;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              id="trylocal-video-iframe"
+              src="https://drive.google.com/file/d/1EXAqi4V9Hag-8HY2-lWvq5NryW11QBE4/preview"
+              title="TryLocal — Fashion Home Trials Mumbai"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; display:block;"
+            ></iframe>
           </div>
         </div>
       </div>
