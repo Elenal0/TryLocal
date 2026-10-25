@@ -391,21 +391,29 @@ function initVideoController() {
    6. PDF Download & Print Helpers
    ========================================================================== */
 function initPdfPrintActions() {
+  const PROFILE_DRIVE_URL = 'https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing';
+  const BROCHURE_DRIVE_URL = 'https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view';
+
   const printProfileBtns = document.querySelectorAll('.action-download-profile');
   const printBrochureBtns = document.querySelectorAll('.action-download-brochure');
 
   printProfileBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
+      if (btn.tagName === 'A' && btn.getAttribute('href') && !btn.getAttribute('href').startsWith('#')) {
+        return; // allow browser to follow direct link
+      }
       e.preventDefault();
-      // Inform the user and trigger browser clean print-to-PDF
-      window.print();
+      window.open(PROFILE_DRIVE_URL, '_blank');
     });
   });
 
   printBrochureBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
+      if (btn.tagName === 'A' && btn.getAttribute('href') && !btn.getAttribute('href').startsWith('#')) {
+        return; // allow browser to follow direct link
+      }
       e.preventDefault();
-      window.print();
+      window.open(BROCHURE_DRIVE_URL, '_blank');
     });
   });
 }
