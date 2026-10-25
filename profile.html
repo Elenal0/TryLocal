@@ -3,14 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Startup Profile | TryLocal — SPIT Mumbai Academic Practical</title>
-  <meta name="description" content="Official Startup Profile Sheet for TryLocal: Hyperlocal Clothing Shopping with Home Trials. Sardar Patel Institute of Technology (SPIT) Mumbai.">
+  <title>Startup Profile | TryLocal — SPIT Mumbai EIPR Project</title>
+  <meta name="description" content="Official Startup Profile Document for TryLocal: Hyperlocal Clothing Shopping with Home Trials. Sardar Patel Institute of Technology (SPIT) Mumbai (MCA, EIPR).">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=3">
+  <style>
+    /* Specific styling for the authentic Startup Profile document */
+    .profile-doc-wrapper {
+      max-width: 1000px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .profile-view-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 1.75rem;
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .profile-tab-group {
+      display: inline-flex;
+      background: #EBEFEE;
+      padding: 0.3rem;
+      border-radius: 9999px;
+      gap: 0.35rem;
+    }
+
+    .profile-tab-btn {
+      padding: 0.45rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .profile-tab-btn.active {
+      background: #FFFFFF;
+      color: #BB6C43;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Authentic PDF Images Stack */
+    .profile-pdf-pages-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .profile-pdf-sheet {
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      max-width: 820px;
+      width: 100%;
+    }
+
+    .profile-pdf-sheet img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Interactive HTML Document View (Mimicking official A4 document) */
+    .profile-a4-sheet {
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+      border: 1px solid #E2E8F0;
+      padding: 3.5rem 3.5rem 4rem 3.5rem;
+      margin-bottom: 2.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #334155;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .doc-page-divider {
+      text-align: center;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+
+    .doc-page-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #CBD5E1;
+      z-index: 1;
+    }
+
+    .doc-page-divider span {
+      position: relative;
+      z-index: 2;
+      background: #F1F5F9;
+      padding: 0.35rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748B;
+      border: 1px solid #CBD5E1;
+    }
+
+    /* Page 1 Header */
+    .doc-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.75rem;
+    }
+
+    .doc-sub-tag {
+      font-size: 1.35rem;
+      color: #BB6C43;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+    }
+
+    .doc-main-title {
+      font-size: 2.5rem;
+      color: #8C4020;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .doc-meta-item {
+      margin-bottom: 0.65rem;
+      font-size: 0.925rem;
+    }
+
+    .doc-meta-item strong {
+      color: #B45309;
+      font-weight: 600;
+    }
+
+    .doc-lead-para {
+      margin: 1.15rem 0;
+      text-align: justify;
+      color: #334155;
+    }
+
+    .doc-lead-para strong {
+      color: #B45309;
+      font-weight: 600;
+    }
+
+    .doc-links-block {
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .doc-link-line strong {
+      color: #B45309;
+      font-weight: 600;
+    }
+
+    .doc-link-line a {
+      color: #B45309;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    /* About Us Golden Circles */
+    .doc-founders-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .doc-founder-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .doc-founder-role-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-founder-avatar-ring {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #D97706;
+      padding: 3px;
+      background: #FFFFFF;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    }
+
+    .doc-founder-avatar-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .doc-founder-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #B45309;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
+    .doc-founder-meta {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    /* Page 2 Elements */
+    .doc-section-h3 {
+      font-size: 1.2rem;
+      color: #B45309;
+      font-weight: 700;
+      margin: 1.75rem 0 0.85rem 0;
+    }
+
+    .doc-team-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.88rem;
+    }
+
+    .doc-team-table th {
+      background: #45372F;
+      color: #FFFFFF;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid #45372F;
+    }
+
+    .doc-team-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    .doc-team-table tr:nth-child(even) td {
+      background: #FAF8F5;
+    }
+
+    .doc-values-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .doc-values-list li {
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .doc-values-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #B45309;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .profile-a4-sheet {
+        padding: 2rem 1.5rem;
+      }
+      .doc-founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .doc-header-row {
+        flex-direction: column-reverse;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body style="background:#F1F5F9;">
 
@@ -31,7 +337,7 @@
     </div>
   </div>
 
-  <!-- Header (Fixed & Non-wrapping) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-link">
@@ -53,7 +359,7 @@
       <div class="nav-cta-group">
         <div id="header-auth-area"></div>
         <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-primary action-download-profile" id="btn-header-profile-download">
-          <span>📥 Download Profile</span>
+          <span>📥 Download Profile (PDF)</span>
         </a>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <span></span>
@@ -64,408 +370,342 @@
     </div>
   </header>
 
-  <!-- Profile Sheet Container -->
-  <main class="container">
-    <div class="profile-sheet-container" id="startup-profile-doc">
-      
-      <!-- Profile Header / Banner -->
-      <div class="profile-sheet-header">
-        <div class="profile-header-top">
-          <div class="profile-college-tag">
-            Sardar Patel Institute of Technology (SPIT), Mumbai • MCA Program
-          </div>
-          <div class="profile-actions-bar">
-            <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline action-download-profile" style="color:#FFFFFF; border-color:rgba(255,255,255,0.4);">
-              <span>📥 Download PDF</span>
-            </a>
-          </div>
+  <!-- Main Profile Document Viewer -->
+  <main style="padding-top:2.5rem; padding-bottom:4rem;">
+    <div class="container profile-doc-wrapper">
+
+      <!-- View Toolbar & Tabs -->
+      <div class="profile-view-toolbar">
+        <div class="profile-tab-group" role="tablist">
+          <button class="profile-tab-btn active" id="tab-btn-doc" onclick="switchProfileTab('doc')" role="tab" aria-selected="true">
+            <span>📄 Official 2-Page PDF Document</span>
+          </button>
+          <button class="profile-tab-btn" id="tab-btn-interactive" onclick="switchProfileTab('interactive')" role="tab" aria-selected="false">
+            <span>✨ Interactive Academic Sheet</span>
+          </button>
         </div>
 
-        <h1 class="profile-main-title">TryLocal</h1>
-        <div class="profile-tagline-quote">"Your Favourite Fits, Tried at Home."</div>
-        <p style="color:#CBD5E1; font-size:1.05rem; max-width:720px; line-height:1.6; margin-bottom:1.5rem;">
-          Hyperlocal Fashion E-commerce &amp; In-Home Trial Logistics Platform connecting neighborhood boutiques in Mumbai with shoppers aged 18–35 for zero-friction home fitting trials.
-        </p>
-
-        <!-- Visual Image Preview in Header -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.75rem;">
-          <div style="border-radius:var(--radius-md); overflow:hidden; height:180px; border:1px solid rgba(255,255,255,0.15);">
-            <img src="assets/trylocal_fitting_mirror.jpg" alt="In-Home Mirror Fitting" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div style="border-radius:var(--radius-md); overflow:hidden; height:180px; border:1px solid rgba(255,255,255,0.15);">
-            <img src="assets/trylocal_doorstep_handover.jpg" alt="Doorstep Delivery Handover" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-        </div>
-
-        <!-- Meta Grid -->
-        <div class="profile-header-meta-grid">
-          <div class="profile-meta-block">
-            <strong>Headquarters Address</strong>
-            <span>Grace Pinnacle, 1105, Andheri West, Mumbai, MH 400058</span>
-          </div>
-          <div class="profile-meta-block">
-            <strong>Institution &amp; Program</strong>
-            <span>SPIT Mumbai • MCA Postgraduate Venture</span>
-          </div>
-          <div class="profile-meta-block">
-            <strong>Primary Contact</strong>
-            <span style="color:#A7F3D0;">Nupur Thakur (nupur.thakur25@spit.ac.in)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Action Asset Links Bar -->
-      <div style="background:#0F1F38; padding:1rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; border-bottom:1px solid rgba(255,255,255,0.1);">
-        <span style="color:#94A3B8; font-size:0.85rem; font-weight:600;">EXPLORE TRYLOCAL PLATFORM:</span>
-        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <a href="index.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>🌐 Main Home</span>
-          </a>
-          <a href="https://drive.google.com/file/d/1tiEL-J-son1cc5vpVGJLhC-bT5qe0DDw/view" target="_blank" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>📄 Brochure (PDF)</span>
-          </a>
-          <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-primary" style="background:#10B981; border-color:#10B981; color:#FFFFFF;">
-            <span>📥 Startup Profile (PDF)</span>
-          </a>
-          <a href="contact.html" class="btn btn-sm btn-outline" style="color:#E2E8F0; border-color:rgba(255,255,255,0.25);">
-            <span>✉ Contact Team</span>
+        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-sm btn-primary action-download-profile">
+            <span>📥 Download Startup Profile PDF</span>
           </a>
         </div>
       </div>
 
-      <!-- Profile Sheet Body -->
-      <div class="profile-sheet-body">
-
-        <!-- 1. Executive Summary -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">01</span>
-            <span>Executive Summary</span>
-          </h2>
-          <div class="profile-text-content">
-            <p style="margin-bottom:0.75rem;">
-              Buying clothes online is undeniably convenient, yet shoppers cannot check fit, size, fabric drape, or true color before paying. Consequently, traditional fashion e-commerce suffers from 30–40% return rates, leading to environmental packaging waste and frozen consumer capital. Simultaneously, neighborhood clothing boutiques across Mumbai possess high-quality, authentic inventory but lack a digital doorstep channel.
-            </p>
-            <p>
-              <strong>TryLocal</strong> bridges this gap through a hyperlocal logistics and trial engine. Shoppers browse live inventories of nearby stores, select 3 to 5 clothing items, and schedule a convenient 45-minute home delivery slot. An eco-friendly runner delivers the garments; the shopper tries them on in the comfort and privacy of their home mirror for 15–20 minutes, keeps and purchases only what fits, and returns unwanted items on the spot. The platform monetizes via a small trial fee (waived if a purchase is made) and a 15% commission on completed sales.
-            </p>
+      <!-- 1. Authentic PDF Document View (Default) -->
+      <div id="profile-view-doc" class="profile-pdf-pages-stack">
+        
+        <!-- Sheet Page 1 -->
+        <div class="profile-pdf-sheet">
+          <div style="background:#FAF8F5; padding:0.6rem 1rem; border-bottom:1px solid #E2E8F0; font-size:0.78rem; font-weight:700; color:#B45309; display:flex; justify-content:space-between;">
+            <span>STARTUP PROFILE — PAGE 1 OF 2</span>
+            <span>SPIT MUMBAI • EIPR COURSE</span>
           </div>
-        </section>
+          <img src="assets/startup_profile_page1.png" alt="Startup Profile Page 1">
+        </div>
 
-        <!-- 2. Academic Abstract -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">02</span>
-            <span>Abstract &amp; Patent Scope</span>
-          </h2>
-          <div class="profile-text-content">
-            <div style="background:#F8FAFC; border-left:4px solid #10B981; padding:1.25rem; border-radius:0 var(--radius-sm) var(--radius-sm) 0; font-size:0.925rem; font-style:italic; color:#334155;">
-              "The invention relates to a hyperlocal clothing-shopping system that connects customers with nearby clothing retailers through a digital platform. The system uses location information to identify nearby stores and provides clothing products based on inventory information. A customer can select clothing items and schedule a home-trial slot, after which the selected items are delivered by a nearby retailer. The system digitally tracks the trial items and enables the customer to purchase suitable items or return remaining items. The system updates inventory, order and payment information and may adjust applicable trial or delivery charges against the final purchase amount. The invention integrates location-based retail discovery, inventory management, scheduled home trials and purchase-or-return processing."
-              <div style="margin-top:0.5rem; font-style:normal; font-size:0.75rem; color:#64748B;">
-                — Ref: Patent Form No. 2 Complete Specification, SPIT Mumbai MCA Practical
-              </div>
-            </div>
+        <!-- Sheet Page 2 -->
+        <div class="profile-pdf-sheet">
+          <div style="background:#FAF8F5; padding:0.6rem 1rem; border-bottom:1px solid #E2E8F0; font-size:0.78rem; font-weight:700; color:#B45309; display:flex; justify-content:space-between;">
+            <span>STARTUP PROFILE — PAGE 2 OF 2</span>
+            <span>SPIT MUMBAI • EIPR COURSE</span>
           </div>
-        </section>
+          <img src="assets/startup_profile_page2.png" alt="Startup Profile Page 2">
+        </div>
 
-        <!-- 3. Vision, Mission & Core Values -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">03</span>
-            <span>Vision, Mission &amp; Company Values</span>
-          </h2>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:0.5rem;">
-            <div style="background:#EFF6FF; border:1px solid #BFDBFE; padding:1.5rem; border-radius:var(--radius-md);">
-              <h3 style="color:#1E40AF; font-size:1.1rem; margin-bottom:0.5rem;">Our Vision</h3>
-              <p style="font-size:0.9rem; color:#1E3A8A; line-height:1.6;">
-                To make local fashion shopping more convenient and confident by bringing the clothing-trial experience to customers' homes.
-              </p>
+      </div>
+
+      <!-- 2. Interactive Academic Document Sheet (Faithful HTML Replica) -->
+      <div id="profile-view-interactive" style="display:none;">
+
+        <!-- PAGE 1 SHEET -->
+        <div class="profile-a4-sheet" id="interactive-page-1">
+          
+          <div class="doc-header-row">
+            <div>
+              <div class="doc-sub-tag">STARTUP PROFILE</div>
+              <h1 class="doc-main-title">TryLocal</h1>
             </div>
-            <div style="background:#ECFDF5; border:1px solid #A7F3D0; padding:1.5rem; border-radius:var(--radius-md);">
-              <h3 style="color:#065F46; font-size:1.1rem; margin-bottom:0.5rem;">Our Mission</h3>
-              <p style="font-size:0.9rem; color:#064E3B; line-height:1.6;">
-                To connect customers with nearby clothing retailers through a simple digital platform for product discovery, scheduled home trials, and convenient purchase-or-return decisions.
-              </p>
+            <div>
+              <img src="assets/logo.svg" alt="TryLocal Logo" height="60">
             </div>
           </div>
 
-          <div style="margin-top:1.25rem;">
-            <h4 style="font-size:1rem; color:var(--color-primary); margin-bottom:0.75rem;">Core Startup Values:</h4>
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:1rem;">
-              <div style="background:#F8FAFC; border:1px solid var(--border-light); padding:1rem; border-radius:var(--radius-sm); text-align:center;">
-                <div style="font-size:1.5rem; margin-bottom:0.25rem;">🎯</div>
-                <strong style="font-size:0.85rem; color:var(--color-primary);">Zero Uncertainty</strong>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Try before you buy in true natural light.</p>
-              </div>
-              <div style="background:#F8FAFC; border:1px solid var(--border-light); padding:1rem; border-radius:var(--radius-sm); text-align:center;">
-                <div style="font-size:1.5rem; margin-bottom:0.25rem;">🏪</div>
-                <strong style="font-size:0.85rem; color:var(--color-primary);">Local Vitality</strong>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Champion neighborhood retail business.</p>
-              </div>
-              <div style="background:#F8FAFC; border:1px solid var(--border-light); padding:1rem; border-radius:var(--radius-sm); text-align:center;">
-                <div style="font-size:1.5rem; margin-bottom:0.25rem;">⚡</div>
-                <strong style="font-size:0.85rem; color:var(--color-primary);">Instant Closure</strong>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">On-the-spot returns; zero courier delays.</p>
-              </div>
-              <div style="background:#F8FAFC; border:1px solid var(--border-light); padding:1rem; border-radius:var(--radius-sm); text-align:center;">
-                <div style="font-size:1.5rem; margin-bottom:0.25rem;">🌱</div>
-                <strong style="font-size:0.85rem; color:var(--color-primary);">Conscious Logistics</strong>
-                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Reusable garment bags, zero cardboard waste.</p>
-              </div>
+          <div class="doc-meta-item">
+            <strong>Date:</strong> Oct 20, 2026
+          </div>
+          <div class="doc-meta-item">
+            <strong>Address:</strong> Grace Pinnacle, 1105, Andheri West, Mumbai, Maharashtra
+          </div>
+          <div class="doc-meta-item">
+            <strong>Institution:</strong> Sardar Patel Institute of Technology (SPIT), Mumbai (MCA, EIPR)
+          </div>
+
+          <p class="doc-lead-para">
+            <strong>Abstract:</strong> TryLocal is a proposed hyperlocal fashion platform that connects customers with nearby clothing stores and brings the trial to their door. Customers pick clothes, book a slot, try them at home, and keep only what they like. TryLocal aims to give shoppers confidence in size and fit, and to give local retailers a structured digital sales channel.
+          </p>
+
+          <div class="doc-links-block">
+            <div class="doc-link-line">
+              <strong>Brochure:</strong> <a href="brochure.html">TryLocal brochure</a>
+            </div>
+            <div class="doc-link-line">
+              <strong>Website:</strong> <a href="index.html">TryLocal Website</a>
+            </div>
+            <div class="doc-link-line">
+              <strong>Promotional Video:</strong> <a href="video.html">TryLocal Full video.mp4</a>
             </div>
           </div>
-        </section>
 
-        <!-- 4. Founders & Key Management Matrix -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">04</span>
-            <span>Founders &amp; Management Matrix</span>
-          </h2>
-          <table class="profile-table">
+          <p class="doc-lead-para" style="margin-top:1.5rem;">
+            <strong>Startup:</strong> TryLocal is a student-led startup concept developed by Aryan Dandekar, Meet Gangwal, Sujal Meshram, and Nupur Thakur during the EIPR course at SPIT, Mumbai. It is currently a proposed concept and not yet an operating business. Each founder leads a core area of the execution plan.
+          </p>
+
+          <div class="doc-section-h3" style="margin-top:2rem;">About Us:</div>
+
+          <div class="doc-founders-grid">
+            
+            <!-- Aryan -->
+            <div class="doc-founder-card">
+              <div class="doc-founder-role-title">CTO</div>
+              <div class="doc-founder-avatar-ring">
+                <img src="assets/photo-aryan.jpg" alt="Aryan Dandekar">
+              </div>
+              <div class="doc-founder-name">Aryan Dandekar</div>
+              <div class="doc-founder-meta">S.P.I.T. Student, CTO</div>
+              <div class="doc-founder-meta">UCID: 2025510014</div>
+            </div>
+
+            <!-- Meet -->
+            <div class="doc-founder-card">
+              <div class="doc-founder-role-title">CEO</div>
+              <div class="doc-founder-avatar-ring">
+                <img src="assets/photo-meet.jpg" alt="Meet Gangwal">
+              </div>
+              <div class="doc-founder-name">Meet Gangwal</div>
+              <div class="doc-founder-meta">S.P.I.T. Student, CEO</div>
+              <div class="doc-founder-meta">UCID: 2025510018</div>
+            </div>
+
+            <!-- Sujal -->
+            <div class="doc-founder-card">
+              <div class="doc-founder-role-title">COO</div>
+              <div class="doc-founder-avatar-ring">
+                <img src="assets/photo-sujal.jpg" alt="Sujal Meshram">
+              </div>
+              <div class="doc-founder-name">Sujal Meshram</div>
+              <div class="doc-founder-meta">S.P.I.T. Student, COO</div>
+              <div class="doc-founder-meta">UCID: 2025510040</div>
+            </div>
+
+            <!-- Nupur -->
+            <div class="doc-founder-card">
+              <div class="doc-founder-role-title">CPO</div>
+              <div class="doc-founder-avatar-ring">
+                <img src="assets/photo-nupur.jpg" alt="Nupur Thakur">
+              </div>
+              <div class="doc-founder-name">Nupur Thakur</div>
+              <div class="doc-founder-meta">S.P.I.T. Student, CPO</div>
+              <div class="doc-founder-meta">UCID: 2025510066</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="doc-page-divider">
+          <span>PAGE 2</span>
+        </div>
+
+        <!-- PAGE 2 SHEET -->
+        <div class="profile-a4-sheet" id="interactive-page-2">
+          
+          <div class="doc-section-h3" style="margin-top:0;">Team Overview:</div>
+
+          <table class="doc-team-table">
             <thead>
               <tr>
-                <th>Founder Name</th>
-                <th>Role &amp; Responsibilities</th>
-                <th>SPIT UCID</th>
-                <th>Email Contact</th>
-                <th>Phone</th>
+                <th>Founder</th>
+                <th>UCID</th>
+                <th>Role</th>
+                <th>Contact</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <div style="display:flex; align-items:center; gap:0.75rem;">
-                    <img src="assets/photo-meet.jpg" alt="Meet Gangwal" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #10B981; flex-shrink:0;">
-                    <strong>Meet Gangwal</strong>
-                  </div>
-                </td>
-                <td>CEO — Business Strategy &amp; Partnerships</td>
-                <td><code>2025510018</code></td>
-                <td><a href="mailto:meet.gangwal25@spit.ac.in" style="color:#0284C7;">meet.gangwal25@spit.ac.in</a></td>
-                <td>+91 9326678457</td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display:flex; align-items:center; gap:0.75rem;">
-                    <img src="assets/photo-nupur.jpg" alt="Nupur Thakur" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #F59E0B; flex-shrink:0;">
-                    <strong>Nupur Thakur</strong>
-                  </div>
-                </td>
-                <td>CPO — Product Strategy &amp; UX Architecture</td>
-                <td><code>2025510066</code></td>
-                <td><a href="mailto:nupur.thakur25@spit.ac.in" style="color:#0284C7;">nupur.thakur25@spit.ac.in</a></td>
-                <td>+91 8340602621</td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display:flex; align-items:center; gap:0.75rem;">
-                    <img src="assets/photo-aryan.jpg" alt="Aryan Dandekar" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #0284C7; flex-shrink:0;">
-                    <strong>Aryan Dandekar</strong>
-                  </div>
-                </td>
-                <td>CTO — Technology, Architecture &amp; Platform</td>
+                <td><strong>Aryan Dandekar</strong></td>
                 <td><code>2025510014</code></td>
-                <td><a href="mailto:aryan.dandekar25@spit.ac.in" style="color:#0284C7;">aryan.dandekar25@spit.ac.in</a></td>
-                <td>+91 8390666246</td>
-              </tr>
-              <tr>
+                <td>CTO, Technology and Platform</td>
                 <td>
-                  <div style="display:flex; align-items:center; gap:0.75rem;">
-                    <img src="assets/photo-sujal.jpg" alt="Sujal Meshram" style="width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid #06B6D4; flex-shrink:0;">
-                    <strong>Sujal Meshram</strong>
-                  </div>
+                  8390666246<br>
+                  <a href="mailto:aryan.dandekar25@spit.ac.in" style="color:#0284C7;">aryan.dandekar25@spit.ac.in</a>
                 </td>
-                <td>COO — Operations &amp; Retailer Coordination</td>
+              </tr>
+              <tr>
+                <td><strong>Meet Gangwal</strong></td>
+                <td><code>2025510018</code></td>
+                <td>CEO, Business Strategy</td>
+                <td>
+                  9326678457<br>
+                  <a href="mailto:meet.gangwal25@spit.ac.in" style="color:#0284C7;">meet.gangwal25@spit.ac.in</a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Sujal Meshram</strong></td>
                 <td><code>2025510040</code></td>
-                <td><a href="mailto:sujal.meshram25@spit.ac.in" style="color:#0284C7;">sujal.meshram25@spit.ac.in</a></td>
-                <td>+91 9657652441</td>
+                <td>COO, Operations and Retailer Coordination</td>
+                <td>
+                  9657652441<br>
+                  <a href="mailto:sujal.meshram25@spit.ac.in" style="color:#0284C7;">sujal.meshram25@spit.ac.in</a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Nupur Thakur</strong></td>
+                <td><code>2025510066</code></td>
+                <td>CPO, Chief Product Officer</td>
+                <td>
+                  8340602621<br>
+                  <a href="mailto:nupur.thakur25@spit.ac.in" style="color:#0284C7;">nupur.thakur25@spit.ac.in</a>
+                </td>
               </tr>
             </tbody>
           </table>
-        </section>
 
-        <!-- 5. SWOT Analysis Matrix -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">05</span>
-            <span>Strategic SWOT Analysis</span>
-          </h2>
-          <div class="swot-matrix-grid">
-            <div class="swot-box swot-s">
-              <div class="swot-title"><span>💪</span> Strengths (Internal)</div>
-              <ul class="swot-list">
-                <li>Home trials before purchase eliminate fit uncertainty</li>
-                <li>Easy discovery of nearby high-quality clothing stores</li>
-                <li>Digital shopping with physical in-home evaluation</li>
-                <li>Structured purchase-or-return workflow in 15–20 minutes</li>
-              </ul>
-            </div>
+          <div class="doc-section-h3">Executive Summary:</div>
+          <p class="doc-lead-para">
+            Buying clothes online is convenient, but shoppers cannot check fit, size, or colour before paying. TryLocal links customers with nearby clothing stores, delivers the selected items to their home, and collects whatever they do not keep.
+          </p>
 
-            <div class="swot-box swot-w">
-              <div class="swot-title"><span>⚠️</span> Weaknesses (Internal)</div>
-              <ul class="swot-list">
-                <li>Requires tight coordination between retailers and runners</li>
-                <li>In-store inventory turnover can fluctuate during rush hours</li>
-                <li>Home trial logistics incur localized delivery/collection costs</li>
-                <li>Initial trust must be cultivated with traditional retail owners</li>
-              </ul>
-            </div>
+          <p class="doc-lead-para">
+            <strong>How it Works:</strong> Customers browse nearby stores in one app, book a delivery slot, and try the clothes at home. Each item gets its own keep-or-return decision, so a customer can buy some items and return the rest.
+          </p>
 
-            <div class="swot-box swot-o">
-              <div class="swot-title"><span>🚀</span> Opportunities (External)</div>
-              <ul class="swot-list">
-                <li>Rapid digital growth for independent Mumbai fashion boutiques</li>
-                <li>Direct campus ambassador partnerships across Mumbai colleges</li>
-                <li>Gradual expansion from Andheri West into Bandra and Juhu</li>
-                <li>Value-added retailer marketing &amp; predictive sizing analytics</li>
-              </ul>
-            </div>
+          <p class="doc-lead-para">
+            <strong>Revenue Model:</strong> TryLocal plans to earn from a trial/delivery fee (initial assumption: ₹200, adjusted against the bill if items are bought) and a 15% commission on completed purchases.
+          </p>
 
-            <div class="swot-box swot-t">
-              <div class="swot-title"><span>🛡️</span> Threats (External)</div>
-              <ul class="swot-list">
-                <li>Established e-commerce giants (Myntra, AJIO) discounting heavily</li>
-                <li>Traffic delays during peak Mumbai monsoon or rush hours</li>
-                <li>Potential resistance to standalone trial fees if unadjusted</li>
-                <li>Risks of garment damage requiring clear merchant inspection rules</li>
-              </ul>
-            </div>
+          <p class="doc-lead-para">
+            <strong>Target Market:</strong> Students and young professionals aged 18 to 35 in one limited pilot area of Mumbai.
+          </p>
+
+          <p class="doc-lead-para">
+            <strong>Roadmap:</strong> The plan runs on a 12-month roadmap covering research and planning, development and pilot, local launch, and review and improvement.
+          </p>
+
+          <p class="doc-lead-para">
+            <strong>Stage:</strong> Proposed concept. There is no live product, no customers, and no sales yet. All financial figures are illustrative estimates to be validated through surveys, retailer interviews, and a pilot.
+          </p>
+
+          <div class="doc-section-h3" style="margin-top:2rem;">Company Description:</div>
+
+          <div style="margin-bottom:1rem;">
+            <strong style="color:#1E293B; font-size:0.95rem;">Company Vision</strong>
+            <p style="margin-top:0.25rem; color:#475569;">
+              To make local fashion shopping more convenient and confident by bringing the clothing-trial experience to customers' homes.
+            </p>
           </div>
-        </section>
 
-        <!-- 6. Business Model & Financial Plan -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">06</span>
-            <span>Business Model &amp; Financial Projections</span>
-          </h2>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.75rem;">
-            <div>
-              <h4 style="color:var(--color-primary); margin-bottom:0.5rem; font-size:1rem;">Revenue Streams &amp; Pricing:</h4>
-              <ul style="list-style:none; font-size:0.875rem; color:#475569; display:flex; flex-direction:column; gap:0.5rem;">
-                <li>• <strong>Trial/Delivery Fee:</strong> ₹200 (Kept only if customer buys nothing; waived upon purchase).</li>
-                <li>• <strong>Sales Commission:</strong> 15% on the gross value of all completed purchases.</li>
-                <li>• <strong>Promoted Listings:</strong> Future premium store placements for featured boutique collections.</li>
-                <li>• <strong>Target Audience:</strong> Mumbai students &amp; young professionals aged 18–35.</li>
-              </ul>
-            </div>
+          <div style="margin-bottom:1rem;">
+            <strong style="color:#1E293B; font-size:0.95rem;">Company Mission</strong>
+            <p style="margin-top:0.25rem; color:#475569;">
+              To connect customers with nearby clothing retailers through a simple digital platform for product discovery, scheduled home trials, and convenient purchase-or-return decisions.
+            </p>
+          </div>
 
-            <div>
-              <h4 style="color:var(--color-primary); margin-bottom:0.5rem; font-size:1rem;">Unit Economics (at 300 Monthly Orders):</h4>
-              <ul style="list-style:none; font-size:0.875rem; color:#475569; display:flex; flex-direction:column; gap:0.5rem;">
-                <li>• <strong>Conversion Rate:</strong> 60% of trial orders result in purchase (180 orders).</li>
-                <li>• <strong>Average Order Value:</strong> ₹1,500 per converting purchase.</li>
-                <li>• <strong>Gross Purchase Value:</strong> ₹2,70,000 / month.</li>
-                <li>• <strong>Estimated Breakeven:</strong> ~530 trials/month (~18 deliveries/day).</li>
-              </ul>
+          <div style="margin-bottom:1.25rem;">
+            <strong style="color:#1E293B; font-size:0.95rem;">Company Values</strong>
+            <ul class="doc-values-list">
+              <li><strong>Customer Confidence:</strong> Shoppers should know what fits before they pay.</li>
+              <li><strong>Local First:</strong> Nearby retailers get a fair, structured digital channel.</li>
+              <li><strong>Honest Operations:</strong> Clear trial and return policies, with no claims that cannot be backed up.</li>
+              <li><strong>Start Small, Learn Fast:</strong> Test in one Mumbai area before expanding.</li>
+            </ul>
+          </div>
+
+          <div style="background:#FAF8F5; border-left:4px solid #BB6C43; padding:1rem 1.25rem; border-radius:4px;">
+            <strong style="color:#8C4020; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px;">Tagline:</strong>
+            <div style="font-size:1.15rem; font-weight:700; color:#334155; font-style:italic; margin-top:0.25rem;">
+              "Your Favourite Fits, Tried at Home."
             </div>
           </div>
 
-          <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.25rem; margin-top:1rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-            <div>
-              <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">One-Time Setup Budget</span>
-              <div style="font-size:1.35rem; font-weight:800; color:var(--color-primary);">₹1,50,000</div>
-              <span style="font-size:0.75rem; color:#64748B;">Platform ₹60k, Legal ₹30k, Assets ₹40k, Bags ₹20k</span>
-            </div>
-            <div>
-              <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Monthly Fixed Costs</span>
-              <div style="font-size:1.35rem; font-weight:800; color:var(--color-primary);">₹38,000</div>
-              <span style="font-size:0.75rem; color:#64748B;">Tech ₹8k, Marketing ₹15k, Support ₹15k</span>
-            </div>
-            <div>
-              <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Delivery + Collection Cost</span>
-              <div style="font-size:1.35rem; font-weight:800; color:#059669;">₹100 / order</div>
-              <span style="font-size:0.75rem; color:#64748B;">Hyperlocal two-way dedicated runner</span>
-            </div>
-          </div>
-        </section>
+        </div>
 
-        <!-- 7. Competitor Differentiation -->
-        <section class="profile-section-block">
-          <h2 class="profile-heading">
-            <span class="profile-heading-num">07</span>
-            <span>Competitor Benchmark Matrix</span>
-          </h2>
-          <table class="profile-table">
-            <thead>
-              <tr>
-                <th>Platform</th>
-                <th>Nearby Retailers?</th>
-                <th>Home Try Before Buying?</th>
-                <th>Purchase &amp; Returns</th>
-                <th>TryLocal's Competitive Edge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Myntra</strong></td>
-                <td>No</td>
-                <td>Limited ("Try &amp; Buy" phased)</td>
-                <td>Courier return window (3-7 days)</td>
-                <td style="color:#059669; font-weight:600;">Nearby Mumbai stores + scheduled slot trial</td>
-              </tr>
-              <tr>
-                <td><strong>AJIO</strong></td>
-                <td>No</td>
-                <td>Not available</td>
-                <td>Category-wise return window</td>
-                <td style="color:#059669; font-weight:600;">Trial embedded natively in delivery workflow</td>
-              </tr>
-              <tr>
-                <td><strong>Amazon Fashion</strong></td>
-                <td>No</td>
-                <td>Phased out in India</td>
-                <td>Varies by item</td>
-                <td style="color:#059669; font-weight:600;">Focus on boutique clothing &amp; instant decision</td>
-              </tr>
-              <tr>
-                <td><strong>Physical Stores</strong></td>
-                <td>Yes (Walk-in only)</td>
-                <td>In-store fitting rooms only</td>
-                <td>Return varies by store</td>
-                <td style="color:#059669; font-weight:600;">Digital reach, home comfort, zero travel</td>
-              </tr>
-              <tr style="background:#ECFDF5;">
-                <td><strong style="color:#047857;">TryLocal (Proposed)</strong></td>
-                <td><strong>Core Feature</strong></td>
-                <td><strong>Scheduled Home Trial</strong></td>
-                <td><strong>Instant Spot Return</strong></td>
-                <td style="color:#047857; font-weight:700;">Complete end-to-end hyperlocal ecosystem</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+      </div><!-- /profile-view-interactive -->
 
-        <!-- Official Sign-off & Contact Footnote -->
-        <div style="border-top:2px solid var(--border-light); padding-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
-          <div>
-            <div style="font-weight:700; color:var(--color-primary); font-size:1.1rem;">TryLocal Development Team</div>
-            <div style="font-size:0.85rem; color:var(--text-muted);">Sardar Patel Institute of Technology (SPIT), Munshi Nagar, Andheri West, Mumbai</div>
-          </div>
-          <div style="display:flex; gap:0.75rem;">
-            <button class="btn btn-outline-primary action-download-profile">
-              <span>Print Profile Sheet</span>
-            </button>
-            <a href="brochure.html" class="btn btn-primary">
-              <span>Explore Brochure →</span>
-            </a>
-          </div>
+      <!-- Action Cards Below Profile Sheet -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:2rem;">
+        
+        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">📥</div>
+          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Download Profile PDF</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
+            Download the official 2-page SPIT Mumbai EIPR startup profile directly from Google Drive.
+          </p>
+          <a href="https://drive.google.com/file/d/1G1amPSFr5ZXOHCOUve5RvBc6fjOcov5N/view?usp=sharing" target="_blank" class="btn btn-primary action-download-profile" style="width:100%;">
+            <span>📥 Download Startup Profile (PDF)</span>
+          </a>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">📑</div>
+          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">View Official Brochure</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
+            Examine the marketing brochure showcase highlighting Unique Features, Benefits, and Boutiques.
+          </p>
+          <a href="brochure.html" class="btn btn-outline" style="width:100%;">
+            <span>📖 Open Brochure Showcase →</span>
+          </a>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:1.8rem; margin-bottom:0.5rem;">🎥</div>
+          <h3 style="font-size:1.15rem; color:var(--color-primary); margin-bottom:0.35rem;">Watch Pitch Video</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5; margin-bottom:1.25rem;">
+            Watch the official promotional pitch video demonstrating the full doorstep trial cycle.
+          </p>
+          <a href="video.html" class="btn btn-outline" style="width:100%;">
+            <span>🎥 Watch Pitch Video →</span>
+          </a>
         </div>
 
       </div>
+
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" style="margin-top:4rem;">
+  <footer class="site-footer" style="margin-top:2rem;">
     <div class="container footer-bottom" style="border:none; padding-top:0;">
-      <div>TryLocal Startup Profile • SPIT Mumbai MCA Practical (EIPR)</div>
-      <div>Grace Pinnacle, 1105, Andheri West, Mumbai</div>
+      <div>TryLocal Startup Profile • SPIT Mumbai MCA EIPR Project</div>
+      <div>Grace Pinnacle, 1105, Andheri West, Mumbai • <a href="mailto:try.local@gmail.com" style="color:var(--color-sand);">try.local@gmail.com</a></div>
     </div>
   </footer>
 
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    function switchProfileTab(mode) {
+      const docView = document.getElementById('profile-view-doc');
+      const interactiveView = document.getElementById('profile-view-interactive');
+      const btnDoc = document.getElementById('tab-btn-doc');
+      const btnInteractive = document.getElementById('tab-btn-interactive');
+
+      if (mode === 'doc') {
+        docView.style.display = 'flex';
+        interactiveView.style.display = 'none';
+        btnDoc.classList.add('active');
+        btnDoc.setAttribute('aria-selected', 'true');
+        btnInteractive.classList.remove('active');
+        btnInteractive.setAttribute('aria-selected', 'false');
+      } else {
+        docView.style.display = 'none';
+        interactiveView.style.display = 'block';
+        btnInteractive.classList.add('active');
+        btnInteractive.setAttribute('aria-selected', 'true');
+        btnDoc.classList.remove('active');
+        btnDoc.setAttribute('aria-selected', 'false');
+      }
+    }
+  </script>
 </body>
 </html>
