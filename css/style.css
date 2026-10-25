@@ -4422,3 +4422,300 @@ main {
   }
 }
 
+/* ==========================================================================
+   Featured Product Cards Uniform & Even Alignment
+   ========================================================================== */
+.shop-products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 1024px) {
+  .shop-products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-products-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.product-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background: #1C1917 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45) !important;
+  border-color: rgba(187, 108, 67, 0.4) !important;
+}
+
+.product-img-wrap {
+  position: relative !important;
+  width: 100% !important;
+  height: 270px !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+  background: #292524 !important;
+}
+
+.product-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.product-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  padding: 1.25rem 1.15rem 1.25rem !important;
+  background: #1C1917 !important;
+  box-sizing: border-box !important;
+}
+
+.product-store {
+  font-size: 0.75rem !important;
+  color: #A8A29E !important;
+  margin-bottom: 0.4rem !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  height: 1.2rem !important;
+}
+
+.product-title {
+  font-size: 1.02rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.35 !important;
+  height: 2.85rem !important; /* Uniform height for exactly 2 lines across all cards */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.product-meta-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 0.85rem !important;
+  margin-top: auto !important;
+}
+
+.product-body .btn,
+.product-body a.btn {
+  margin-top: 0 !important;
+  width: 100% !important;
+  border-radius: 8px !important;
+  background: #BB6C43 !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  padding: 0.7rem 1rem !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  border: none !important;
+}
+
+.product-body .btn:hover,
+.product-body a.btn:hover {
+  background: #A05533 !important;
+}
+
+/* ==========================================================================
+   Founder Personality Colors & Doodles
+   Meet: Sky Blue
+   Nupur: Yellow & Peacock Green
+   Aryan: Dark Blue & Indigo
+   Sujal: Pink & Violet
+   ========================================================================== */
+
+/* Member 1: Meet Gangwal (CEO) - Sky Blue */
+#team-card-meet {
+  border-top: 4px solid #38BDF8 !important;
+  background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 22%) !important;
+  position: relative;
+  overflow: hidden;
+}
+#team-card-meet .team-avatar-img {
+  border: 3px solid #38BDF8 !important;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25) !important;
+}
+#team-card-meet .team-ucid-badge {
+  background: #0284C7 !important;
+  color: #FFFFFF !important;
+}
+#team-card-meet .team-role {
+  color: #0284C7 !important;
+}
+#team-card-meet:hover {
+  border-color: #38BDF8 !important;
+  box-shadow: 0 14px 30px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* Member 2: Nupur Thakur (CPO) - Yellow & Peacock Green */
+#team-card-nupur {
+  border-top: 4px solid #0D9488 !important;
+  background: linear-gradient(180deg, #FEF9C3 0%, #F0FDF4 15%, #FFFFFF 30%) !important;
+  position: relative;
+  overflow: hidden;
+}
+#team-card-nupur .team-avatar-img {
+  border: 3px solid #EAB308 !important;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.3) !important;
+}
+#team-card-nupur .team-ucid-badge {
+  background: #0D9488 !important;
+  color: #FFFFFF !important;
+}
+#team-card-nupur .team-role {
+  color: #0F766E !important;
+}
+#team-card-nupur:hover {
+  border-color: #0D9488 !important;
+  box-shadow: 0 14px 30px rgba(13, 148, 136, 0.2) !important;
+}
+
+/* Member 3: Aryan Dandekar (CTO) - Dark Blue & Indigo */
+#team-card-aryan {
+  border-top: 4px solid #4338CA !important;
+  background: linear-gradient(180deg, #EEF2FF 0%, #FFFFFF 22%) !important;
+  position: relative;
+  overflow: hidden;
+}
+#team-card-aryan .team-avatar-img {
+  border: 3px solid #4338CA !important;
+  box-shadow: 0 0 0 4px rgba(67, 56, 202, 0.25) !important;
+}
+#team-card-aryan .team-ucid-badge {
+  background: #1E3A8A !important;
+  color: #FFFFFF !important;
+}
+#team-card-aryan .team-role {
+  color: #4338CA !important;
+}
+#team-card-aryan:hover {
+  border-color: #4338CA !important;
+  box-shadow: 0 14px 30px rgba(67, 56, 202, 0.2) !important;
+}
+
+/* Member 4: Sujal Meshram (COO) - Pink & Violet */
+#team-card-sujal {
+  border-top: 4px solid #EC4899 !important;
+  background: linear-gradient(180deg, #FDF2F8 0%, #F5F3FF 15%, #FFFFFF 30%) !important;
+  position: relative;
+  overflow: hidden;
+}
+#team-card-sujal .team-avatar-img {
+  border: 3px solid #EC4899 !important;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.3) !important;
+}
+#team-card-sujal .team-ucid-badge {
+  background: #8B5CF6 !important;
+  color: #FFFFFF !important;
+}
+#team-card-sujal .team-role {
+  color: #9D174D !important;
+}
+#team-card-sujal:hover {
+  border-color: #EC4899 !important;
+  box-shadow: 0 14px 30px rgba(236, 72, 153, 0.2) !important;
+}
+
+/* Personality Doodle SVGs — full card background, very faint decorative lines */
+.founder-doodle-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.18;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  overflow: visible;
+}
+.team-card:hover .founder-doodle-svg {
+  opacity: 0.32;
+}
+/* Ensure all card content sits above the SVG layer */
+.team-card > *:not(.founder-doodle-svg) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Sleek Floating Side Download Button
+   ========================================================================== */
+.floating-side-dl-btn {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #BB6C43 0%, #8C4020 100%);
+  color: #FFFFFF !important;
+  padding: 0.9rem 0.65rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -4px rgba(187, 108, 67, 0.45), 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.floating-side-dl-btn:hover {
+  transform: translateY(calc(-50% - 3px)) scale(1.05);
+  box-shadow: 0 16px 32px -4px rgba(187, 108, 67, 0.6), 0 6px 14px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #D47A4D 0%, #A34E28 100%);
+}
+
+.floating-side-dl-btn .side-dl-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.floating-side-dl-btn .side-dl-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .floating-side-dl-btn {
+    right: 10px;
+    padding: 0.7rem 0.5rem;
+  }
+}
+
